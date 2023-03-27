@@ -28,6 +28,7 @@ const sidebars = {
     {
       type: "category",
       label: "Cloud or Hybrid",
+      className: "azuread",
       link: {
         type: "doc",
         id: "cloudorhybrid",
