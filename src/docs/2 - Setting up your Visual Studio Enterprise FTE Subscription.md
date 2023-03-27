@@ -1,7 +1,7 @@
 ﻿---
 id: vssub
 title: Setting up your Visual Studio FTE subscription 
-sidebar_label: 2. Set up Visual Studio subscription
+sidebar_label: Set up Visual Studio sub
 slug: /vssub
 ---
 

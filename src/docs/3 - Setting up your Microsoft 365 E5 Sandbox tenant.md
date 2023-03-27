@@ -1,7 +1,7 @@
 ﻿---
 id: setupm365
 title: Setting up your Microsoft 365 E5 Sandbox Tenant 
-sidebar_label: 3. Set up Microsoft 365 tenant
+sidebar_label: Set up Microsoft 365 tenant
 slug: /setupm365
 ---
 

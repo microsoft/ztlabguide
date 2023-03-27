@@ -19,7 +19,11 @@ const sidebars = {
     {
       type: 'category',
       label: '🛠️ Pre-requisites',
-      items: ['vssub', 'setupm365', 'linkazuresub'],
+      items: [
+        {type: 'doc', id: 'vssub', className: 'vscode'},
+        {type: 'doc', id: 'setupm365', className: 'm365'},
+        {type: 'doc', id: 'linkazuresub', className: 'azure'},
+      ],
     },
     'hybriddeploy',
     'clouddeploy',
