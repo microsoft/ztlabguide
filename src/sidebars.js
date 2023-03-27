@@ -13,11 +13,12 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  docsSidebar: [
-    'intro',
+  docsSidebar: [    
+    'overview',
+    'map',
     {
       type: 'category',
-      label: 'Pre-requisites',
+      label: '🛠️ Pre-requisites',
       items: ['vssub', 'setupm365', 'linkazuresub'],
     },
     'hybriddeploy',

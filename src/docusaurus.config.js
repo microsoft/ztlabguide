@@ -72,6 +72,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
+          {to: 'map', label: 'Map', position: 'left'},
           {
             href: 'https://github.com/microsoft/ztlabguide',
             className: 'header-github-link',
