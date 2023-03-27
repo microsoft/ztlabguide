@@ -1,7 +1,7 @@
 ﻿---
 id: defcloudapp
 title: Defender for Cloud Apps 
-sidebar_label: 26. Defender for Cloud Apps
+sidebar_label: Defender for Cloud Apps
 slug: /defcloudapp
 ---
 

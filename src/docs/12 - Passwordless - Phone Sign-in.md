@@ -1,7 +1,7 @@
 ﻿---
 id: pswdlesspsi
 title: Passwordless with Phone Sign-in 
-sidebar_label: 12. Passwordless with Phone Sign-in
+sidebar_label: Phone Sign-in
 slug: /pswdlesspsi
 ---
 

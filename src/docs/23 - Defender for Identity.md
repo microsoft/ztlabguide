@@ -1,7 +1,7 @@
 ﻿---
 id: defidentity
 title: Defender for Identity 
-sidebar_label: 23. Defender for Identity
+sidebar_label: Defender for Identity
 slug: /defidentity
 ---
 

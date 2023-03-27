@@ -1,7 +1,7 @@
 ﻿---
 id: govlcw
 title: Lifecycle Workflows 
-sidebar_label: 20. Lifecycle Workflows
+sidebar_label: Lifecycle Workflows
 slug: /govlcw
 ---
 

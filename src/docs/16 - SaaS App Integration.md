@@ -1,7 +1,7 @@
 ﻿---
 id: saasapp
 title: SaaS App Integration for Single Sign-on
-sidebar_label: 16. SaaS App Integration
+sidebar_label: SaaS App Integration
 slug: /saasapp
 ---
 

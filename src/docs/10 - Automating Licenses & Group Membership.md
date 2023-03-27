@@ -1,7 +1,7 @@
 ﻿---
 id: license
 title: Automating Group Membership & License Assignment 
-sidebar_label: 10. Automate License Assignment
+sidebar_label: Automate license assignment
 slug: /license
 ---
 

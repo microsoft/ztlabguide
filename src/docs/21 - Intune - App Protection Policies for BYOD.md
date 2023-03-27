@@ -1,7 +1,7 @@
 ﻿---
 id: intappprot
 title: Intune App Protection Policies for BYO Devices
-sidebar_label: 21. Intune - App Protection Policies
+sidebar_label: App Protection Policies
 slug: /intappprot
 ---
 

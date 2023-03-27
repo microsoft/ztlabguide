@@ -1,7 +1,7 @@
 ﻿---
 id: pswdlesscba
 title: Passwordless with Certificate Based Authentication 
-sidebar_label: 13. Passwordless - Cert Based Auth
+sidebar_label: Certificate Based Auth
 slug: /pswdlesscba
 ---
 

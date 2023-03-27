@@ -1,7 +1,7 @@
 ﻿---
 id: clouddeploy
 title: Cloud Only Deployment
-sidebar_label: 6. Cloud Only Deployment
+sidebar_label: Cloud Only Deployment
 slug: /clouddeploy
 ---
 

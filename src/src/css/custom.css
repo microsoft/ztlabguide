@@ -74,3 +74,98 @@ html[data-theme="dark"] .header-github-link:before {
   padding-right: 0.5rem;
   content: url(/static/img/vscode.svg);
 }
+
+.intune a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/intune.svg);
+}
+
+.defender a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/defender.svg);
+}
+
+.azuread a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/azuread.svg);
+}
+
+.appproxy a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/appproxy.svg) !important;
+}
+
+.apps a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/apps.svg) !important;
+}
+
+.allapps a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/allapps.svg);
+}
+
+.connectsync a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/connectsync.svg);
+}
+
+.hybrid a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/hybrid.svg);
+}
+
+.ca a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/ca.svg);
+}
+
+.pim a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/pim.svg);
+}
+
+.license a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/license.svg);
+}
+
+.pswdprotect a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/pswdprotect.svg);
+}
+
+.governance a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/governance.svg);
+}
+
+.accessreview a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/accessreview.svg) !important;
+}
+
+.lcw a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/lcw.svg) !important;
+}
+
+.entmgmt a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/entmgmt.svg) !important;
+}
+
+.passwordless a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/passwordless.svg);
+}
+
+.psi a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/psi.svg) !important;
+}
+
+.cba a::before {
+  padding-right: 0.5rem;
+  content: url(/static/img/cba.svg) !important;
+}

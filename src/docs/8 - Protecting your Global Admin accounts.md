@@ -1,7 +1,7 @@
 ﻿---
 id: pim
 title: Protect Your Global Admins & Enforce Least Privileged With PIM
-sidebar_label: 8. Privileged Identity Management
+sidebar_label: Least privilege config
 slug: /pim
 ---
 

@@ -1,7 +1,7 @@
 ﻿---
 id: pswdlesswhfb
 title: Bootstrapping Windows Hello for Business using Temporary Access Pass 
-sidebar_label: 14. Passwordless - WHfB 
+sidebar_label: Windows Hello for Business 
 slug: /pswdlesswhfb
 ---
 

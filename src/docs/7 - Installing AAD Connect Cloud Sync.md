@@ -1,7 +1,7 @@
 ﻿---
 id: cloudsync
 title: Installing Azure AD Connect Cloud Sync
-sidebar_label: 7. Cloud Sync
+sidebar_label: Cloud Sync
 slug: /cloudsync
 ---
 

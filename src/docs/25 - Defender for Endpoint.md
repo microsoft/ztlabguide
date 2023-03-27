@@ -1,7 +1,7 @@
 ﻿---
 id: defendpoint
 title: Defender for Endpoint 
-sidebar_label: 25. Defender for Endpoint
+sidebar_label: Defender for Endpoint
 slug: /defendpoint
 ---
 

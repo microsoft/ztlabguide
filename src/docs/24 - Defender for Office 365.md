@@ -1,7 +1,7 @@
 ﻿---
 id: defo365
 title: Defender for Office 365 
-sidebar_label: 24. Defender for Office 365
+sidebar_label: Defender for Office 365
 slug: /defo365
 ---
 

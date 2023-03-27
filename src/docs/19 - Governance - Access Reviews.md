@@ -1,7 +1,7 @@
 ﻿---
 id: govaccrev
 title: Access Reviews 
-sidebar_label: 19. Access Reviews
+sidebar_label: Access Reviews
 slug: /govaccrev
 ---
 

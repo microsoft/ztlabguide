@@ -1,7 +1,7 @@
 ﻿---
 id: goventmgmt
 title: Onboard external users to Azure AD with Entitlement Management
-sidebar_label: 18. Entitlement Management
+sidebar_label: Entitlement Management
 slug: /goventmgmt
 ---
 

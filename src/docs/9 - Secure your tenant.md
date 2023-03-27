@@ -1,12 +1,9 @@
 ﻿---
 id: securetenant
 title: Secure your tenant 
-sidebar_label: 9. Secure your tenant
+sidebar_label: Secure tenant
 slug: /securetenant
 ---
-
-
-
 
 In the previous lab we focused on securing our privileged accounts, and we will extend and build upon that concept by using conditional access to provide coverage to all users by implementing a persona-based Conditional Access architecture as recommend by the [Conditional Access Framework & Policies](https://learn.microsoft.com/en-us/azure/architecture/guide/security/conditional-access-framework) guidance. This approach provides base protection for users that spans data, apps, and devices, as well as catering for various business scenarios such as securely collaborating with guests.
 # Lab success exit criteria

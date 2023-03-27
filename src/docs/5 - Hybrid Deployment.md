@@ -1,7 +1,7 @@
 ﻿---
 id: hybriddeploy
 title: Creating your Hybrid environment 
-sidebar_label: 5. Hybrid Deployment
+sidebar_label: Hybrid Deployment
 slug: /hybriddeploy
 ---
 

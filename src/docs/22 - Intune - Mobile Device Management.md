@@ -1,7 +1,7 @@
 ﻿---
 id: intmdm
 title: Mobile Device Management with Intune 
-sidebar_label: 22. Intune - MDM
+sidebar_label: Mobile Device Management
 slug: /intmdm
 ---
 
