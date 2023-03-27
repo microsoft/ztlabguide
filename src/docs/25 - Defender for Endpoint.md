@@ -26,25 +26,27 @@ A sample script will then be run on the virtual machine to simulate suspicious a
 The first step you take is to set up the service-to-service connection between Intune and Defender for Endpoint. To do this:
 
 1. Sign into the Intune Portal <https://endpoint.microsoft.com> 
+
 2. Select **Endpoint security** > **Microsoft Defender for Endpoint**, and then select **Open the Microsoft Defender Security Center**.
 
 ![](img/defendpoint.001.png)
 
 3. This will open the In **Microsoft 365 Defender** portal (<https://security.microsoft.com>)
+
 4. Select **Settings** > **Endpoints** >**Advanced features**.
+
 1. For **Microsoft Intune connection**, choose **On** 
 
 ![](img/defendpoint.002.png)
 
 6. Click **Save preferences**.
-1. Now return to **Microsoft Defender for Endpoint** page back in the Intune portal.
-1. Under **Compliance policy evaluation**, configure the following:
 
-Set **Connect Android devices** to Microsoft Defender for Endpoint to **On**
+7. Now return to **Microsoft Defender for Endpoint** page back in the Intune portal.
 
-Set **Connect iOS devices** to Microsoft Defender for Endpoint to **On**
-
-Set **Connect Windows devices** to Microsoft Defender for Endpoint to **On**
+8. Under **Compliance policy evaluation**, configure the following:
+-  **Connect Android devices** to Microsoft Defender for Endpoint: **On**
+- **Connect iOS devices** to Microsoft Defender for Endpoint: **On**
+- **Connect Windows devices** to Microsoft Defender for Endpoint: **On** 
 
 9. Click **Save.**
 
@@ -52,25 +54,31 @@ Set **Connect Windows devices** to Microsoft Defender for Endpoint to **On**
 After you connect Intune and Defender for Endpoint, Intune receives an onboarding configuration package from Defender for Endpoint. You then use a device configuration profile to deploy the package to your Windows devices. This configuration package configures devices to communicate with Microsoft Defender for Endpoint services to scan files and detect threats so a risk level can be determined that Intune can action.
 
 1. In the Intune portal <https://endpoint.microsoft.com> 
-1. Select **Endpoint security** > **Endpoint detection and response** > **Create Policy**.
+
+2. Select **Endpoint security** > **Endpoint detection and response** > **Create Policy**.
    * For **Platform**, select **Windows 10 and later**.
    * For **Profile type**, select **Endpoint detection and response**, and then select **Create**.
-1. This brings up the **Create profile** page.
+3. This brings up the **Create profile** page.
+
 1. On the **Basics** page, enter “Defender for Endpoint Windows Configuration Profile” for the *Name* then click **Next**.
+
 1. On the **Configuration settings** page, configure the following options for **Endpoint Detection and Response**.
 
 ![Graphical user interface, text, application Description automatically generated](img/defendpoint.003.png)
 
 6. Select **Next** to open the **Scope tags** page. Scope tags are optional, so we won’t add anything here. Select **Next** to continue.
+
 1. On the **Assignments** page, select both the **Add all users** and **Add all devices** options and then click **Next**.
 
 ![Graphical user interface, text, email Description automatically generated](img/defendpoint.004.png)
 
 8. On the **Review + create** page choose **Create** to create the profile.
+
 ## Step 3. Create a compliance policy to set device risk score.
 The compliance policy determines the level of risk that you consider acceptable for a device to remain compliant. We will be setting the machine risk score to *Low* which means that any device marked as Medium or High will be determined to be noncompliant.
 
 1. In the Intune portal select **Devices > Compliance policies > Policies > Create Policy**.
+
 1. For **Platform**, use the drop-down box to select **Windows 10 and later** and then click **Create**.
 1. This opens a **Windows 10/11 compliance policy** page.
 1. Under **Basics**, enter *“Defender for Endpoint Windows Compliance Policy*” for the *Name* and then click **Next**.
@@ -79,6 +87,7 @@ The compliance policy determines the level of risk that you consider acceptable 
 ![Graphical user interface, text, application, email Description automatically generated](img/defendpoint.005.png)
 
 6. Click **Next**, on the **Actions for noncompliance** tab, leave this section blank and click **Next**.
+
 6. On the **Assignments** tab, choose both the **Add all users** and **Add all devices** and click **Next**.
 6. Select **Create** to finish creating the policy.
 6. Lastly, very the current compliant state of the Hyper-V virtual machine under **Devices > Windows Devices.** It should be showing as **Compliant**.
@@ -89,10 +98,11 @@ The compliance policy determines the level of risk that you consider acceptable 
 Network protection helps to prevent employees from using any application to access dangerous domains that may host phishing scams, exploits, and other malicious content on the internet. This will allow us to block specific SaaS apps on device in the subsequent Defender for Cloud Apps lab.
 
 1. Go to **Endpoint security > Security baselines > Microsoft Defender for Endpoint Baseline**.
+
 1. Select **Create a profile**, and name the profile “Windows Network Protection” and then select **Next**.
 1. In the **Configuration settings** section, go to **Attack Surface Reduction Rules >** and ensure **Enable Network Protection** is set to **Enable.** Click **Next.
 
-   ![](img/defendpoint.007.png)**
+![](img/defendpoint.007.png)**
 
 1. On **Scope tags** you can leave this empty. Click **Next.**
 1. On the **Assignments** tab, choose both the **Add all users** and **Add all devices** and click **Next**.
@@ -102,6 +112,7 @@ Network protection helps to prevent employees from using any application to acc
 To verify that the device has been properly onboarded to Defender for Endpoint and is reporting to the service correctly we will now run a detection script on the Windows 11 Hyper-V VM. This script simulates a [“Mitre Attack”](https://attack.mitre.org/techniques/T1059/001/) that Defender for Endpoint will alert on, which in turn will be picked up by Intune, which will then mark the device as “Not Compliant”.
 
 1. Log into your Azure AD Joined Hyper-V virtual machine as a test user.
+
 1. Go to **Start** and type **cmd** and then right-click **Command Prompt** and select **Run as administrator**.
 1. From the elevated Command Prompt window copy and paste the command below. The Command Prompt window will close automatically once it runs.
 
@@ -111,7 +122,7 @@ To verify that the device has been properly onboarded to Defender for Endpoint a
 
 4. After a few minutes a new alert against the device with a severity of Medium will appear in the Microsoft 365 Defender portal (<https://security.microsoft.com>) under **Incidents & alerts > Alerts**.
 
-   ![Graphical user interface, text, application, email Description automatically generated](img/defendpoint.008.png)
+![Graphical user interface, text, application, email Description automatically generated](img/defendpoint.008.png)
 
 1. Click on the **Suspicious PowerShell command line** alert to view more details about the suspicious activity.
 
@@ -122,6 +133,7 @@ To verify that the device has been properly onboarded to Defender for Endpoint a
 ![](img/defendpoint.010.png)
 
 7. Any conditional access policy with a Grant control that “Require device to be marked as compliant” will now block this device from accessing any resources protected by the CA policy.
+
 1. To bring the device back into compliance you can mark the incident as resolved via the M365 Defender portal. 
 1. To do this go to **Incidents & alerts > Incidents** and select the *“Execution incident on one endpoint”* incident and under **Manage incident** and set the **Status** to **Resolved** and save the changes.
 
