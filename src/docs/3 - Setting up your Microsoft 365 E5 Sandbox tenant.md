@@ -22,12 +22,12 @@ At the end of this sign-up process, you will be presented with a screen to setup
 There are two options that you will be presented with when creating your sandbox tenant, **Instant Sandbox** or **Configurable Sandbox**. There are slight nuances between each option that you should be aware of which are:
 
 **Instant Sandbox**
-` `- The tenant’s name is randomly generated for you**
-` `- All sample data packs are automatically installed
+- The tenant’s name is randomly generated for you
+- All sample data packs are automatically installed
 
-**Configurable Sandbox
--** You can choose your own tenant’s name
-\- You can choose what sample data packs to install
+**Configurable Sandbox**
+- You can choose your own tenant’s name
+- You can choose what sample data packs to install
 
 Aside from the above points there is no discernible differences between the tenants whichever option you choose. However, my recommendation for this guide is for you to choose the **Configurable Sandbox** option as it gives you slightly more flexibility.
 

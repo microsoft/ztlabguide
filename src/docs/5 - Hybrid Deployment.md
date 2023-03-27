@@ -1,6 +1,7 @@
 ﻿---
 id: hybriddeploy
 title: Creating your Hybrid environment 
+description: Set up Active Directory and Connect/Cloud sync
 sidebar_label: Hybrid Deployment
 slug: /hybriddeploy
 ---

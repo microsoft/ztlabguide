@@ -64,7 +64,6 @@ Then click the Switch button that should be next to your E5 sandbox tenant.
 ![](img/linkazuresub.009.png)
 
 Congratulations, you now have your $150 USD Azure subscription linked to your non-expiring E5 sandbox tenant where you can now start building your Zero Trust lab.
-
-***Note:*** If you want to access this Azure subscription still via your @outlook.com account then you will need to repeat ***just*** steps 2 & 4 in this guide for that account (i.e. make it an owner and invite/redeem the account into the E5 tenant and then change the startup directory) but for the purposes of this lab we will only be using your global admin account from here on in to access the Azure portal/subscription in order to keep things simple.
-
-
+:::note
+If you want to access this Azure subscription still via your @outlook.com account then you will need to repeat ***just*** steps 2 & 4 in this guide for that account (i.e. make it an owner and invite/redeem the account into the E5 tenant and then change the startup directory) but for the purposes of this lab we will only be using your global admin account from here on in to access the Azure portal/subscription in order to keep things simple.
+:::

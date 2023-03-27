@@ -107,7 +107,7 @@ html[data-theme="dark"] .header-github-link:before {
 
 .connectsync a::before {
   padding-right: 0.5rem;
-  content: url(/static/img/connectsync.svg);
+  content: url(/static/img/connectsync.svg) !important;
 }
 
 .hybrid a::before {
