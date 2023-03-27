@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://ztlabguide.microsoft.com',
+  url: 'https://ztlabguide.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -20,7 +20,6 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'microsoft', // Usually your GitHub org/user name.
   projectName: 'ztlabguide', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -43,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/microsoft/ztlabguide/blob/main',
+            'https://github.com/microsoft/ztlabguide/blob/main/src/',
         },
         blog: false,
         theme: {
