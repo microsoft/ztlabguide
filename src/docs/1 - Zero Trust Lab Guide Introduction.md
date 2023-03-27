@@ -7,7 +7,11 @@ slug: /
 
 Zero Trust Lab Guide
 # Lab Guide Overview
-Welcome to the Zero Trust lab guide. The purpose of this guide is to provide a Zero Trust learning path that provides logically ordered structured guidance on how to build your own lab. The lab is designed to be simple, usable, and demo rich. Once built it requires minimal ongoing maintenance for longevity. Say goodbye to expiring trials and time-consuming lab rebuilds. 
+Welcome to the Zero Trust lab guide. The purpose of this guide is to provide a Zero Trust learning path that provides logically ordered structured guidance on how to build your own lab. The lab is designed to be simple, usable, and demo rich. Once built it requires minimal ongoing maintenance for longevity. Say goodbye to expiring trials and time-consuming lab rebuilds.
+
+<div class="mapContainer">
+    <iframe src="ZTLabGuideMap.pdf#toolbar=0" type="application/pdf" />
+</div>
 
 The guide has been created with the aim to retain knowledge by building something from the ground up using your own environment. This approach provides an opportunity to fail occasionally (that’s good), learn to troubleshoot, and explore along the way, and by following this guide it will help you understand (and talk to) our end-to-end Zero Trust story to better grasp how all of our features and services within the Microsoft 365 stack fit together to tell the Microsoft Security Zero Trust story. 
 
