@@ -17,6 +17,10 @@ Defender for Cloud Apps also provides out-of-the-box threat detection policies f
 Protecting your tenant against malware infections and data being left unencrypted on personal devices means that you need to ensure that your data is only available on devices that meet minimum security configurations. In this lab we will perform the necessary configurations for limiting file downloads from Microsoft 365 apps to managed devices only via Microsoft Defender for Cloud Apps.
 
 Using our existing Windows 11 AADJ virtual machine that is now both Intune managed and Defender for Endpoint controlled, we will discover what cloud apps are being used from this device via the Defender for Cloud Apps integration with Defender for Endpoint. We will then tag an application as unsanctioned to block access to it. Using a session policy, we will then allow access to another app, but restrict the ability to download sensitive documents from it onto the device.
+
+## Prerequisites 
+You need to have these items prepared for this lab.
+
 ## Estimated lab completion time.
 30 minutes
 
