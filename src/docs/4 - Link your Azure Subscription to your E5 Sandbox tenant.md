@@ -7,7 +7,7 @@ slug: /linkazuresub
 
 
 
-Lab success exit criteria
+## Lab success exit criteria
 By the end of this lab you will have successfully linked your Visual Studio Enterprise Azure Subscription with your Microsoft 365 E5 Sandbox tenant. This step is important as it allows you to leverage specific Azure AD features that are reliant on key Azure services, such as Log Analytics for workbook functionality, and Azure Sentinel, all of which will be configured in later labs. 
 
 ![Graphical user interface Description automatically generated with medium confidence](img/linkazuresub.001.png)
@@ -19,12 +19,13 @@ To be able to link an Azure subscription to a different directory you first need
 
 ![Graphical user interface, application Description automatically generated](img/linkazuresub.002.png)
 
-1. Click on your Visual Studio Enterprise Subscription
+2. Click on your Visual Studio Enterprise Subscription
 
-   ![Graphical user interface, text, application, email Description automatically generated](img/linkazuresub.003.png)
-1. In the left-hand navigation pane that opens click **Access Control (IAM)** and then click the **Add** button.
+![Graphical user interface, text, application, email Description automatically generated](img/linkazuresub.003.png)
 
-   ![](img/linkazuresub.004.png)
+3. In the left-hand navigation pane that opens click **Access Control (IAM)** and then click the **Add** button.
+
+![](img/linkazuresub.004.png)
 - Select **Add Role Assignment** from the drop-down list.
 - On the **Role** tab select **Owner** and click **Next**. 
 - On the **Members** tab leave **Assign access to** **“User, group, or service principal”**.
@@ -43,7 +44,7 @@ This process invites the global admin as a Guest user into the default directory
 ## Step 3. Associate the subscription with your E5 sandbox tenant
 1. Whilst still logged into the Azure Portal as your E5 sandbox tenant global admin, find the **Subscriptions** tile and then click the **Visual Studio Enterprise Subscription** and** in the next screen click the **Change Directory** link at the top of the page.
 
-   ![](img/linkazuresub.005.png)
+![](img/linkazuresub.005.png)
 1. A **Change the directory** flyout window will open on the right-hand side where you should see your E5 Sandbox tenant listed in the drop-down menu. Select your tenant and check the “I understand” box and then click **Change** at the bottom of the window.
 
 
@@ -64,6 +65,5 @@ Then click the Switch button that should be next to your E5 sandbox tenant.
 ![](img/linkazuresub.009.png)
 
 Congratulations, you now have your $150 USD Azure subscription linked to your non-expiring E5 sandbox tenant where you can now start building your Zero Trust lab.
-:::note
-If you want to access this Azure subscription still via your @outlook.com account then you will need to repeat ***just*** steps 2 & 4 in this guide for that account (i.e. make it an owner and invite/redeem the account into the E5 tenant and then change the startup directory) but for the purposes of this lab we will only be using your global admin account from here on in to access the Azure portal/subscription in order to keep things simple.
-:::
+
+**Note:** If you want to access this Azure subscription still via your @outlook.com account then you will need to repeat ***just*** steps 2 & 4 in this guide for that account (i.e. make it an owner and invite/redeem the account into the E5 tenant and then change the startup directory) but for the purposes of this lab we will only be using your global admin account from here on in to access the Azure portal/subscription in order to keep things simple.
