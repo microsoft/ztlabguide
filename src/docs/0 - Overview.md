@@ -49,4 +49,3 @@ The lab guide map provides a visual representation of how to deploy the lab depe
 The map is hyperlinked and clicking on the step/feature will take you straight to the relevant guide. 
 
 ![Timeline Description automatically generated](img/ztlabguidemap.png)
-
