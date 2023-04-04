@@ -44,20 +44,21 @@ This user will ***not*** have permanent membership to the Global administrator r
 1. Now assign a **Microsoft 365 E5 Developer** license to this new user as well.
 1. Login, change the password, and register for MFA using an InPrivate Edge session via <https://aka.ms/mfasetup> for this new user as well.
 
-To recap, at this point you now have these two new users that we will begin testing with.
--
+```To recap, at this point you now have these two new users that we will begin testing with.```
+
 - DedicatedAdmin (Is a member of the Global Administrator role)
 - TemporaryAdmin (Is **not** a member of any privileged roles)
 
 
 
 ## Step 4. Create the conditional access policies
-We will now create two new conditional access policies that will:
--
-- - **Require MFA for accounts that hold membership to privileged admin directory roles.**
-- - **Require MFA if the sign-in risk is determined to be medium or high.**
 
-Conditional access policies can become very detailed and cumbersome to manage overtime, so to continue with the *keeping it simple* mantra of this lab guide we will be using the new [Conditional Access Templates](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policy-common#conditional-access-templates-preview) feature that provide a convenient way to deploy new CA policies aligned with Microsoft recommendations and naming policies, and which are designed to provide maximum protection for the tenant.
+#### We will now create two new conditional access policies that will:
+
+- **Require MFA for accounts that hold membership to privileged admin directory roles.**
+- **Require MFA if the sign-in risk is determined to be medium or high.**
+
+Conditional access policies can become very detailed and cumbersome to manage overtime, so to continue with the ***keeping it simple*** mantra of this lab guide we will be using the new [Conditional Access Templates](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policy-common#conditional-access-templates-preview) feature that provide a convenient way to deploy new CA policies aligned with Microsoft recommendations and naming policies, and which are designed to provide maximum protection for the tenant.
 
 1. Click **Azure Active Directory > Security > Conditional Access**.
 1. In the **Conditional access – Policies** pane, select **+ New policy from template (Preview).**
@@ -70,7 +71,7 @@ Conditional access policies can become very detailed and cumbersome to manage ov
 1. Under **Select template** choose the **Require multifactor authentication for risky sign-ins** template, leave the policy name as is, and put the **Policy state** to **On** then click **Next**.
 1. Under **Review + Create** click **Create Policy**.
 
-You should now have these two CA policies in your tenant prefixed with CA001 & CA007.
+You should now have these two CA policies in your tenant prefixed with ***CA001*** & ***CA007***.
 
 
 ![Graphical user interface, text, application, chat or text message Description automatically generated](img/pim.002.png)
@@ -81,8 +82,7 @@ To test the first MFA policy, **CA001: Require multifactor authentication for ad
 
 1. Open a new InPrivate Edge session.
 1. Browse <https://portal.azure.com> (or any portal of your choice)
-1. Sign in with the **DedicatedAdmin** account.  
-   **Result →** You should be prompted for MFA.  
+1. Sign in with the **DedicatedAdmin** account.  **Result →** You should be prompted for MFA.  
 1. Open a new InPrivate Edge session. 
 1. Browse <https://portal.azure.com> (or any portal of your choice)
 1. This time sign in with the **TemporaryAdmin** account. 
@@ -116,9 +116,9 @@ To configure PIM in the tenant:
 1. On the **Setting** page set **Assignment type** as **Eligible** and leave **Permanently eligible** checked and then click **Assign.**
 1. Click on **Role settings** in the left pane to see the Activation requirements and notice that:
 
-*Activation maximum duration (hours)* – 8 hours 
-*Require justification on activation* – Yes 
-*On activation, require Azure MFA* – Yes 
+    *Activation maximum duration (hours)* – *8 hours*    
+    *Require justification on activation* – *Yes*    
+    *On activation, require Azure MFA* – *Yes*
 
 ## Step 7. Activate the role via Privileged Identity Management
 Sign in in using the TemporaryAdmin account and activate the new role assignment.
@@ -130,23 +130,25 @@ Sign in in using the TemporaryAdmin account and activate the new role assignment
 1. In the PIM dashboard left-hand pane under **Tasks** click **My roles**.
 1. Under **Eligible assignments** you should see the Global Administrator role listed with an option to Activate the role. Click **Activate**.
 
-   ![Graphical user interface, text, application, email Description automatically generated](img/pim.006.png)
-1. You will be prompted to provide additional verification (MFA), click continue.
+![Graphical user interface, text, application, email Description automatically generated](img/pim.006.png)
 
-   ![](img/pim.007.png)
-1. Once you successfully complete MFA you will then need to provide a reason for the activation in the text box and then click **Activate**
+7. You will be prompted to provide additional verification (MFA), click continue.
+
+![](img/pim.007.png)
+
+8. Once you successfully complete MFA you will then need to provide a reason for the activation in the text box and then click **Activate**
 
 ![Graphical user interface, text, application Description automatically generated](img/pim.008.png)
 
 ![Graphical user interface, text, application, email Description automatically generated](img/pim.009.png)
 
-1. Once the page refreshes automatically you’ll receive a banner message stating that **Your roles have changed** and if you click the Active assignments tab you will see the Global Administrator role state shows as **Activated.** 
+9. Once the page refreshes automatically you’ll receive a banner message stating that **Your roles have changed** and if you click the Active assignments tab you will see the Global Administrator role state shows as **Activated.** 
 
-   You now have full privileged access to the tenant, for 8 hours.
 
-   ![Graphical user interface, text, application Description automatically generated](img/pim.010.png)
+![Graphical user interface, text, application Description automatically generated](img/pim.010.png)
 
 ![Graphical user interface, text, application, email Description automatically generated](img/pim.011.png)
 
+You now have full privileged access to the tenant, for 8 hours.
 
 ##
