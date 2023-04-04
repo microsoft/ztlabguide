@@ -10,6 +10,7 @@ slug: /cloudsync
 Azure AD Connect cloud sync is a new approach for the synchronization of users, groups, and contacts to Azure AD. It accomplishes this by using a lightweight provisioning agent instead of the old school Azure AD Connect application that is based on MIM. Cloud Sync is not feature complete when compared with AAD Connect, namely it is missing the ability to sync devices, custom attributes, and perform device/group writeback. It does however support Password Hash Sync and SSPR + writeback which is more than adequate for the purposes of this lab guide.
 
 Password hash sync (PHS) is a sign-on method used to accomplish hybrid identity. AAD connect syncs a hash of the hash, of a user’s password from on-premises AD to Azure AD.
+
 # Lab success exit criteria
 After installing the Cloud Sync agent in the on-premises Active Directory, you will configure Cloud Sync to synchronize users and their password hashes to the tenant. As a final step you will enable Self Service Password Reset (SSPR) and enable the password writeback feature. This setup will then be validated by signing into Azure AD with a test on-premises user using their on-premises credentials.
 
@@ -23,11 +24,11 @@ After installing the Cloud Sync agent in the on-premises Active Directory, you w
 The basic SKU of Azure Bastion doesn’t allow the copy or pasting of files over a remote session (it does allow the copy/paste of text though). To work around this, one option is to upgrade Azure Bastion to the standard SKU which would increase the monthly Azure credit unnecessarily. The suggested option is to download the required files throughout the lab directly onto the VM itself, to do this we need to turn off the IE Enhanced Security settings on the server and then install Edge to limit the use of Internet Explorer.
 
 1. Log into the DC VM using Azure Bastion.
-1. Go to **Start/Server Manager/Local Server** and toggle **IE Enhanced Security Configuration** to **Off** for both Administrators and Users.
+2. Go to **Start/Server Manager/Local Server** and toggle **IE Enhanced Security Configuration** to **Off** for both Administrators and Users.
 
 ![](img/cloudsync.002.png)
 
-1. Open Internet Explorer from the shortcut on the task bar and go to <https://www.microsoft.com/en-us/edge> and then choose the **Download For Windows Server** option and run through the setup to install Edge. Once installed, pin Edge to the task bar.
+3. Open Internet Explorer from the shortcut on the task bar and go to <https://www.microsoft.com/en-us/edge> and then choose the **Download For Windows Server** option and run through the setup to install Edge. Once installed, pin Edge to the task bar.
 ## Step 2. Download, install Azure AD Connect Cloud Sync
 1. Whilst still connected to the DC VM via Azure Bastion.
 1. Go to <https://aad.portal.azure.com> and login with the Global Admin account.
@@ -36,36 +37,37 @@ The basic SKU of Azure Bastion doesn’t allow the copy or pasting of files over
 
 ![](img/cloudsync.003.png)
 
-1. In the new page that opens click the **Download agent** link and accept the Terms of Service.
+5. In the new page that opens click the **Download agent** link and accept the Terms of Service.
 
 ![Graphical user interface, text, application Description automatically generated](img/cloudsync.004.png)
 
-1. This will download a file called [AADConnectProvisioningAgentSetup](https://docs.microsoft.com/en-us/azure/active-directory/cloud-sync/how-to-install).exe to the Downloads folder. Open the file to start the setup, check the licence box, and click **Install**.
-1. This will spawn the agent configuration wizard, click **Next** on the welcome screen.
+6. This will download a file called [AADConnectProvisioningAgentSetup](https://docs.microsoft.com/en-us/azure/active-directory/cloud-sync/how-to-install).exe to the Downloads folder. Open the file to start the setup, check the licence box, and click **Install**.
+7. This will spawn the agent configuration wizard, click **Next** on the welcome screen.
 
 ![](img/cloudsync.005.png)
 
-1. On the **Connect Azure AD** screen, authenticate to the tenant using the Global Admin credentials. 
+8. On the **Connect Azure AD** screen, authenticate to the tenant using the Global Admin credentials. 
 
 ![](img/cloudsync.006.png)
 
-1. On the **Configure Service Account** screen leave the radio button on **Create gMSA** and then enter in the On-Premises AD administrator credentials and then click **Next**.
+9. On the **Configure Service Account** screen leave the radio button on **Create gMSA** and then enter in the On-Premises AD administrator credentials and then click **Next**.
 
 ![](img/cloudsync.007.png)
 
-1. On the **Connect Active Directory** screen the ADDS domain should automatically appear under **Configured Domains**. Click **Next**.
+10. On the **Connect Active Directory** screen the ADDS domain should automatically appear under **Configured Domains**. Click **Next**.
 
 ![](img/cloudsync.008.png)
 
-1. On the **Agent configuration** screen review the settings and click **Confirm** to complete the installation.
+11. On the **Agent configuration** screen review the settings and click **Confirm** to complete the installation.
 
 ![](img/cloudsync.009.png)
 
-1. Once the installation has finished successfully go back to the AAD portal and under **Azure Active Directory > Azure AD Connect > Manage Cloud Sync >** **Azure AD Connect Cloud Sync** click **Review all agents.** The new agent will be showing as active.
+12. Once the installation has finished successfully go back to the AAD portal and under **Azure Active Directory > Azure AD Connect > Manage Cloud Sync >** **Azure AD Connect Cloud Sync** click **Review all agents.** The new agent will be showing as active.
 
 ![](img/cloudsync.010.png)
 
 ![Graphical user interface, application Description automatically generated](img/cloudsync.011.png)
+
 ## Step 3. Configure Azure AD Connect Cloud Sync
 Now that the agent has been successfully installed, provisioning settings will now be configured. Unlike AAD Connect, all configuration settings for Cloud Sync are performed from within the Azure AD portal. 
 
@@ -73,28 +75,20 @@ Now that the agent has been successfully installed, provisioning settings will n
 
 ![Graphical user interface, text, application Description automatically generated](img/cloudsync.012.png)
 
-1. Select the **New configuration** option
+2. Select the **New configuration** option
 
 ![Graphical user interface, text, application Description automatically generated](img/cloudsync.013.png)
 
-1. On the configuration screen, select the domain and tick **Enable password hash sync**. Click **Create**.
+3. On the configuration screen, select the domain and tick **Enable password hash sync**. Click **Create**.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/cloudsync.014.png)
 
-1. On the next screen, **Edit cloud sync configuration**, leave all the settings as default and then move the selector at the bottom to **Enable** then click **Save**.
+4. On the next screen, **Edit cloud sync configuration**, leave all the settings as default and then move the selector at the bottom to **Enable** then click **Save**.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/cloudsync.015.png)
 
 
-
-
-
-
-
-
-
-
-1. Once the configuration has been saved successfully click out of the configuration screen to return to the Azure AD Connect Cloud dashboard, verify the status shows as healthy.
+5. Once the configuration has been saved successfully click out of the configuration screen to return to the Azure AD Connect Cloud dashboard, verify the status shows as healthy.
 
 ![](img/cloudsync.016.png)
 
@@ -102,12 +96,12 @@ Now that the agent has been successfully installed, provisioning settings will n
 To validate that Cloud Sync is working we will now create a user in the On-Premises Active Directory and synchronize that user to your Azure AD tenant.
 
 1. Connect to the DC VM via Azure Bastion.
-1. Go to **Start/Run** and type DSA.msc and hit enter. This will open the **Active Directory Users and Computers** snap-in. Expand the domain object and then right click on the **Users** organizational unit object and select **New** → **User.**
+2. Go to **Start/Run** and type DSA.msc and hit enter. This will open the **Active Directory Users and Computers** snap-in. Expand the domain object and then right click on the **Users** organizational unit object and select **New** → **User.**
 
 
-   ![Graphical user interface, application Description automatically generated](img/cloudsync.017.png)
+![Graphical user interface, application Description automatically generated](img/cloudsync.017.png)
 
-1. Fill in the **New Object – User** wizard with the following details.
+3. Fill in the **New Object – User** wizard with the following details.
 
 **First Name:** Bobby
 
@@ -136,7 +130,7 @@ Cloud provisioning is scheduled to run every 2 mins. Any additions or changes to
 
 ***Note*** how the on-premises UPN has been replaced with the tenant@onmicrosoft.com domain.
 
-1. To validate Cloud Sync is working check the provisioning logs. To do this, go to **Azure AD Connect > Manage Azure AD Cloud Sync** and then click the three dots to the far right of the Configuration section which will expose a **View Provisioning Logs** drop down option.
+3. To validate Cloud Sync is working check the provisioning logs. To do this, go to **Azure AD Connect > Manage Azure AD Cloud Sync** and then click the three dots to the far right of the Configuration section which will expose a **View Provisioning Logs** drop down option.
 
 ![Graphical user interface, text, application Description automatically generated](img/cloudsync.021.png)
 
@@ -147,16 +141,17 @@ Cloud provisioning is scheduled to run every 2 mins. Any additions or changes to
 ## Step 6. Assign a license to Bobby Smith
 1. In the **All users** blade click on Bobby Smith to go into the users properties page and then click the **Edit properties** link at the top, then click the **Settings** link and set the **Usage Location** to a desired location of your choice and hit **Save**.
 
-   ![Graphical user interface, text, application Description automatically generated](img/cloudsync.023.png)
+![Graphical user interface, text, application Description automatically generated](img/cloudsync.023.png)
  
-1. Back on the users properties page for Bobby Smith, click on **Licences** in the bottom left pane, then click on the **+ Assignments** button and then select the **Microsoft 365 E5 Developer** license and then click **Save** at the bottom of the page.
+2. Back on the users properties page for Bobby Smith, click on **Licences** in the bottom left pane, then click on the **+ Assignments** button and then select the **Microsoft 365 E5 Developer** license and then click **Save** at the bottom of the page.
+
 ## Step 7. Test signing in with your new user
 1. Open a new InPrivate Edge session and browse to <https://outlook.office.com>
-1. Sign-in with the new user account (Bobby) that was created in the tenant. 
+2. Sign-in with the new user account (Bobby) that was created in the tenant. 
    **Note:** You will need to sign-in using a combination of the tenant provided UPN (bobby@domain.onmicrosoft.com) and the users on-premises password that was sync’d to the tenant via Cloud Sync.
-1. Successfully signing in will land you into Bobby’s new (empty) mailbox.
+3. Successfully signing in will land you into Bobby’s new (empty) mailbox.
 
-   ![Graphical user interface, text, application Description automatically generated](img/cloudsync.024.png)
+![Graphical user interface, text, application Description automatically generated](img/cloudsync.024.png)
 
 
 
@@ -172,17 +167,19 @@ The last step of this lab involves one final configuration piece for Cloud Sync,
 
 ![Graphical user interface, application Description automatically generated](img/cloudsync.025.png)
 
-1. Once your DC VM has rebooted, log back in and open a PowerShell window again and copy and paste in the following code to enable password writeback.
+2. Once your DC VM has rebooted, log back in and open a PowerShell window again and copy and paste in the following code to enable password writeback.
 
+```
 Import-Module 'C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll'
 
 Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-Credential)
+```
 
-1. This will spawn a credential request window. Enter the Global Admin credentials for the tenant here.
+3. This will spawn a credential request window. Enter the Global Admin credentials for the tenant here.
 
 ![](img/cloudsync.026.png)
 
-1. Once successfully authenticated you should receive this output response indicating that enabling SSPR writeback was successful.
+4. Once successfully authenticated you should receive this output response indicating that enabling SSPR writeback was successful.
 
 ![](img/cloudsync.027.png)
 
