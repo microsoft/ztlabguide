@@ -9,27 +9,27 @@ In the previous lab we focused on securing our privileged accounts, and we will 
 # Lab success exit criteria
 At the completion of this lab, you will have created these six additional CA policies using the built-in conditional access policy templates that use these naming conventions.
 
-*CA002: Securing security info registration
-CA003: Block legacy authentication
-CA004: Require multi-factor authentication for all users
-CA005: Require multi-factor authentication for guest access
-CA006: Require multi-factor authentication for Azure management
-CA008: Require password change for high-risk users Requires Azure AD Premium* 
+``CA002: Securing security info registration``   
+``CA003: Block legacy authentication``  
+``CA004: Require multi-factor authentication for all users``    
+``CA005: Require multi-factor authentication for guest access``  
+``CA006: Require multi-factor authentication for Azure management``   
+``CA008: Require password change for high-risk users`` 
 
-These six policies complement our two existing policies that we created in the previous lab, being:
+These six new policies will complement our two existing policies that we created in the previous lab, being:
 
-`      `*CA001: Require multifactor authentication for admins
-`      `CA007: Require multifactor authentication for risky sign-ins*
+``CA001: Require multifactor authentication for admins``   
+``CA007: Require multifactor authentication for risky sign-ins``
 ## Step 1. Create a trusted named network location
 Before we create the remaining CA policies, we need to first create a trusted network location that users must come from to successfully register their security information (MFA & SSPR) as will be dictated by the CA policy CA002. There are various ways to do this, such as specifying a public IP (or range), or by country. Here will we be using a public IP range derived from your own public IP. To find your current public IP address use <https://myip.com> and write it down.
 
 1. Click **Azure Active Directory > Security > Conditional Access**.
-1. Under **Named locations** select **+ IP ranges location** and in the **New location (IP ranges)** menu on the right provide these details:
-   1. **Name:** Corp Network
-   1. Check the box for **Mark as trusted location**
-   1. Click the **+** and under **Enter a new IPv4…** add your IP range.
-      E.g. If your IP address was 119.18.0.166 you can add the range 119.18.0.166/30
-   1. Click **Add** and then click **Create**.
+1. Under **Named locations** select **+ IP ranges location** and in the **New location (IP ranges)** menu on the right provide these details:   
+   **Name:** Corp Network  
+   Check the box for **Mark as trusted location**  
+   Click the **+** and under **Enter a new IPv4…** add your IP range.
+   (e.g. If your IP address was 119.18.0.166 add the range 119.18.0.166/30)   
+   Click **Add** and then click **Create**.
 
 ![](img/securetenant.001.png)
 
@@ -67,7 +67,7 @@ Once you have chosen your method to change the IP that you are appearing to come
 
 ![](img/securetenant.005.png)
 
-1. Now repeat steps 1-3, but this time ensure you are now coming from your trusted IP range (i.e. turn off your VPN). The proof-up process should be successful this time allowing you into the portal to register for MFA.
+4. Now repeat steps 1-3, but this time ensure you are now coming from your trusted IP range (i.e. turn off your VPN). The proof-up process should be successful this time allowing you into the portal to register for MFA.
 
 
 ## Step 3. Testing the “CA003: Block legacy authentication” policy
@@ -77,17 +77,17 @@ Using the Microsoft Remote Connectivity Analyzer we will simulate an Exchange Ac
 
 ![Graphical user interface, text, application, email Description automatically generated](img/securetenant.006.png)
 
-1. On the next screen fill in the required details for the user in your tenant that is licensed for Exchange (these would have been created for you via the User sample pack, but if not create and license a new user or just use your existing Global Admin account) and ensure to leave the radio button on **“Use Autodiscover…”** and set the **Authentication type** drop down to **Basic authentication**.
+2. On the next screen fill in the required details for the user in your tenant that is licensed for Exchange (these would have been created for you via the User sample pack, but if not create and license a new user or just use your existing Global Admin account) and ensure to leave the radio button on **“Use Autodiscover…”** and set the **Authentication type** drop down to **Basic authentication**.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/securetenant.007.png)
 
-Complete the required **CAPTCHA** and tick the **“I understand..”** box to then perform the test.
+3. Complete the required **CAPTCHA** and tick the **“I understand..”** box to then perform the test.
 
 1. The connectivity test will fail on the AutoDiscover test (as expected due to blocking legacy auth) and if we delve into the results of this test, you’ll see this mentioned in the 401 response.
 
 ![Graphical user interface, text, application Description automatically generated](img/securetenant.008.png)
 
-If you also check the sign-in logs for the corresponding failed sign-in attempt, you’ll see that policy **CA003: Block legacy authentication** was responsible for the block.
+If you also check the sign-in logs for the corresponding failed sign-in attempt you’ll see that policy **CA003: Block legacy authentication** was responsible for the block.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/securetenant.009.png)
 
