@@ -2,7 +2,7 @@
 id: clouddeploy
 title: Cloud only deployment
 description: Set up a cloud only lab without active directory and sync.
-sidebar_label: Cloud only deployment
+sidebar_label: Cloud-Only Deployment
 slug: /clouddeploy
 ---
 

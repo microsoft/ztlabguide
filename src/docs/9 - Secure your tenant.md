@@ -1,7 +1,7 @@
 ﻿---
 id: securetenant
 title: Secure your tenant 
-sidebar_label: Secure tenant
+sidebar_label: Secure Your Tenant
 slug: /securetenant
 ---
 
@@ -72,7 +72,7 @@ Once you have chosen your method to change the IP that you are appearing to come
 4. Now repeat steps 1-3, but this time ensure you are now coming from your trusted IP range (i.e. turn off your VPN). The proof-up process should be successful this time allowing you into the portal to register for MFA.
 
 
-## Step 3. Testing the “CA003: Block legacy authentication” policy
+## Step 4. Testing the “CA003: Block legacy authentication” policy
 Using the Microsoft Remote Connectivity Analyzer we will simulate an Exchange ActiveSync client that uses basic authentication in order to verify the CA policy that blocks legacy authentication is working.
 
 1. Navigate to <https://testconnectivity.microsoft.com/tests/o365> and select the “Exchange ActiveSync test.

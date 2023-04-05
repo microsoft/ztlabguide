@@ -1,7 +1,7 @@
 ﻿---
 id: appproxy
 title: Publishing on-premises apps using Application Proxy 
-sidebar_label: Application proxy
+sidebar_label: Application Proxy
 slug: /appproxy
 ---
 

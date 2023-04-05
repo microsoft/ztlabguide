@@ -18,7 +18,7 @@ const sidebars = {
     "map",
     {
       type: "category",
-      label: "🛠️ Pre-requisites",
+      label: "🛠️ Pre-Requisites",
       items: [
         { type: "doc", id: "vssub", className: "vscode" },
         { type: "doc", id: "setupm365", className: "m365" },
@@ -37,7 +37,7 @@ const sidebars = {
         { type: "doc", id: "clouddeploy", className: "azuread" },
         {
           type: "category",
-          label: "Hybrid deployment",
+          label: "Hybrid Deployment",
           className: "hybrid",
           link: {
             type: "doc",

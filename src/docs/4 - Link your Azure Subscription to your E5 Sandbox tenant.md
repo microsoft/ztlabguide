@@ -1,7 +1,7 @@
 ﻿---
 id: linkazuresub
 title: Link your Azure subscription with your E5 Sandbox tenant 
-sidebar_label: Link Azure subscription
+sidebar_label: Azure Subscription
 slug: /linkazuresub
 ---
 

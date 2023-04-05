@@ -1,7 +1,7 @@
 ﻿---
 id: pswdprotect
 title: Deploy and manage password protection 
-sidebar_label: Password protection
+sidebar_label: Password Protection
 slug: /pswdprotect
 ---
 

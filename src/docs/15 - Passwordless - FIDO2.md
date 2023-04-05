@@ -1,7 +1,7 @@
 ﻿---
 id: pswdlessfido2
 title: Passwordless sign-in using a FIDO2 security key 
-sidebar_label: FIDO2 security keys
+sidebar_label: FIDO2 Security Keys
 slug: /pswdlessfido2
 ---
 
