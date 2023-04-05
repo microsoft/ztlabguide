@@ -5,10 +5,12 @@ sidebar_label: Set up Microsoft 365 tenant
 slug: /setupm365
 ---
 
-## Lab success exit criteria
+# Lab success exit criteria
 At the end of this lab you will have joined the **Microsoft Developer Program** and created a new **Microsoft 365 E5 tenant** that is populated with sample users and data that simulates a small corporate environment which will be used as the foundation for the remaining guide.
 
+
 ![](img/setupm365.001.png)
+#
 ## Step 1. Join the Microsoft 365 Developer Program
 1. Using your Microsoft corporate FTE account log into <https://my.visualstudio.com/benefits> and locate the **Microsoft 365 Developer subscription (E5)** tile and click **Activate**. 
 

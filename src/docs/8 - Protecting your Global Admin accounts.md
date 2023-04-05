@@ -10,6 +10,8 @@ slug: /pim
 In this lab we will begin the process of securing the tenant beginning with members of the highly privileged [Global administrator role.](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference) The first step in protecting accounts that are members of this role is to enable MFA via Conditional Access, and then use [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure#:~:text=Privileged%20Identity%20Management%20\(PIM\)%20is,Microsoft%20365%20or%20Microsoft%20Intune.) (PIM) to provide [Just-In-Time](https://docs.microsoft.com/en-us/azure/azure-resource-manager/managed-applications/approve-just-in-time-access) (JIT) elevation into this powerful role.
 # Lab success exit criteria
 By the end of this lab, you will have created a new baseline MFA conditional access policy that targets any user that holds the Global Administrator role, and which challenges for MFA at sign-in across all apps, no exceptions. Lastly, you will configure PIM, and then create a new account to test requesting access to the Global Administrator role via the PIM JIT elevation workflow.
+#
+
 ## Step 1. Turn off Security Defaults
 [Security Defaults](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-fundamentals-security-defaults) provide baseline protection for a tenant out of the box (require MFA for all users, block legacy auth) but its functionality is superseded by conditional access with the ownership of Azure AD P1 licenses. We will now turn this off.
 

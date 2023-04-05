@@ -7,10 +7,12 @@ slug: /linkazuresub
 
 
 
-## Lab success exit criteria
+# Lab success exit criteria
 By the end of this lab you will have successfully linked your Visual Studio Enterprise Azure Subscription with your Microsoft 365 E5 Sandbox tenant. This step is important as it allows you to leverage specific Azure AD features that are reliant on key Azure services, such as Log Analytics for workbook functionality, and Azure Sentinel, all of which will be configured in later labs. 
 
+
 ![Graphical user interface Description automatically generated with medium confidence](img/linkazuresub.001.png)
+#
 ## Step 1. Add your Global Admin as Owner to your Azure subscription
 To be able to link an Azure subscription to a different directory you first need to invite an account from the new target directory into the existing directory that the subscription is currently associated with, and then assign owner rights to the subscription for this invited account. This processes basically leverages the B2B Guest invitation & redemption process.
 

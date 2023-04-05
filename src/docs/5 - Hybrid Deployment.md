@@ -12,11 +12,13 @@ The first thing that we need to do to get our hybrid identity environment up and
 
 To do this we will be using Azure Infrastructure as a Service (IaaS) to build out a single [Active Directory Domain Services (AD DS) domain controller](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview). This environment will demonstrate [hybrid identity](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity) and other capabilities that require an on-premises Active Directory.
 
-## Lab success exit criteria
+# Lab success exit criteria
 In this lab you will deploy an Azure Quick Start template which will automatically provision a single virtual machine *and* configure Active Directory for you. You will then secure remote access to this server using [Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/2-what-is-azure-bastion).
+
 
 ![](img/hybriddeploy.001.png)
 
+#
 ## Step 1. Create your virtual machine
 To simplify the deployment, an [Azure Resource Manager (ARM)](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) template will be deployed to build out the simulated on-premises environment. This template requires minimal input and will build out a single Windows 2016 server and install and configure a new Active Directory Forest. 
 

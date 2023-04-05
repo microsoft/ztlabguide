@@ -6,8 +6,10 @@ slug: /vssub
 ---
 
 
-## Lab success exit criteria
+# Lab success exit criteria
 At the end of this lab guide you will have successfully activated your Visual Studio Enterprise benefit using your corporate Microsoft account (@microsoft.com) ***and*** created a new Azure Subscription that is linked to your personal MSA account (@outlook.com).
+#
+
 ## Step 1. Visual Studio Subscription Activation 
 1. To activate your Visual Studio Enterprise Subscription, you first need to login to <https://my.visualstudio.com> using your corporate Microsoft FTE account (<you@microsoft.com>).
 

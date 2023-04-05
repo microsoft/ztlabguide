@@ -12,6 +12,7 @@ Users often create passwords that leverage common words or phrases that are gene
 ![](img/pswdprotect.001.png)  
 # Lab success exit criteria
 At the end of this lab, you will have enabled self-service password reset, deployed the Azure AD password protection agents to your on-premises AD environment, and configured a custom banned password list that contains words that users will be prevented from using during a password change/reset event.
+#
 
 ## Step 1. Enable self-service password reset.
 1. In the Azure Active Directory portal, click on **Password reset** in the left-hand menu.
@@ -107,4 +108,5 @@ Get-AzureADPasswordProtectionSummaryReport
 ```
 
 ![A picture containing text Description automatically generated](img/pswdprotect.009.png)
+
 

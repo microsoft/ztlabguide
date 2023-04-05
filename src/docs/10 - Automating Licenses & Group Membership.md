@@ -9,9 +9,11 @@ slug: /license
 
 
 Group-based licensing automatically assigns or removes licenses for a user account based on group membership. Dynamic group membership adds or removes members to a group based on user account attribute properties, such as Department or Country. 
-#
+
 # Lab success exit criteria
 Using the Department attribute of a user, we will test automatically assigning users to a group called Sales. Group Based Licensing will then be configured to assign users an M365 license automatically if this attribute is set to a value of “Sales” on their user account. 
+#
+
 ## Step 1. Create a new user
 If you added the sample user pack after you created your sandbox tenant then these users automatically had a license assigned to them when they were created, so in order to experience group based licensing and dynamic group membership we will be creating a new user to work with instead.
 

@@ -20,6 +20,8 @@ These six new policies will complement our two existing policies that we created
 
 ``CA001: Require multifactor authentication for admins``   
 ``CA007: Require multifactor authentication for risky sign-ins``
+#
+
 ## Step 1. Create a trusted named network location
 Before we create the remaining CA policies, we need to first create a trusted network location that users must come from to successfully register their security information (MFA & SSPR) as will be dictated by the CA policy CA002. There are various ways to do this, such as specifying a public IP (or range), or by country. Here will we be using a public IP range derived from your own public IP. To find your current public IP address use <https://myip.com> and write it down.
 

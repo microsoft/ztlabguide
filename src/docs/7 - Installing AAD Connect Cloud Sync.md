@@ -16,7 +16,7 @@ After installing the Cloud Sync agent in the on-premises Active Directory, you w
 
 ![](img/cloudsync.001.png)
 
-
+#
 
 
 
