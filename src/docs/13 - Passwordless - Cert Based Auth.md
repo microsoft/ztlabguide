@@ -20,7 +20,7 @@ When a user is enabled for CBA the sign in flow works like this.
 
 Setting up CBA itself in Azure AD is quite straightforward, but it does have a dependency on an on-premises PKI infrastructure which can be relatively complex to setup, and which of course requires a Hybrid identity environment. For this lab we can drop the PKI requirement and configure and test CBA by using PowerShell to generate a self-signed Certificate Authority and self-signed user certificates. This approach has the added benefit of allowing cloud-only deployments to test out and use CBA (for lab purposes only of course).
 
-## Lab success exit criteria
+# Lab success exit criteria
 Using the *New-SelfSignedCertificate* cmdlet you will create a Root Certificate Authority certificate and then upload this to Azure AD and then enable the Cert Based Auth method policy. You will then create a User Client certificate that is signed by the same Root Certificate Authority and place this into the certificate store on your host machine allowing you to then test signing in to Azure AD with this user cert.
 
 ## Step 1. Create the Root Certificate Authority and User certificate
