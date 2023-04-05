@@ -37,8 +37,8 @@ If you chose the Cloud Only lab then you can skip this step and proceed straight
 
 Two installers are required for an on-premises Azure AD Password Protection deployment:
 
-- Azure AD Password Protection DC agent ``(AzureADPasswordProtectionDCAgentSetup.msi)``
-- Azure AD Password Protection proxy ``(AzureADPasswordProtectionProxySetup.exe)``
+- Azure AD Password Protection DC agent ``AzureADPasswordProtectionDCAgentSetup.msi``
+- Azure AD Password Protection proxy ``AzureADPasswordProtectionProxySetup.exe``
 
 **Note:** It is not supported to install these two agents on the same machine as doing so can prevent the agent updater service from contacting Azure for future software updates. For the purposes of this lab however we are going to install both agents on the same machine (as we only have 1 VM), and whist not recommended, it will allow us to test the feature out.
 
@@ -86,6 +86,7 @@ If you chose the **Cloud Only** option of this lab guide then you can use any us
 Now let’s validate SSPR.
 
 1. Browse to <https://aka.ms/sspr> and enter in the UPN for Bobby Smith
+
 1. Complete the CAPTCHA and hit **Next**.
 
 ![Graphical user interface, text, application Description automatically generated](img/pswdprotect.006.png)

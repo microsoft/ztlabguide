@@ -7,7 +7,7 @@ slug: /pswdlesscba
 
 
 
-Certificate Based Authentication (CBA) is a new addition to our suite of passwordless offering’s that Azure AD natively supports. It is a phish-resistant credential and is a critical use case for highly regulated industries that need to comply with the Presidential Executive Order on cybersecurity. 
+**Certificate Based Authentication** (CBA) is a new addition to our suite of passwordless offering’s that Azure AD natively supports. It is a phish-resistant credential and is a critical use case for highly regulated industries that need to comply with the Presidential Executive Order on cybersecurity. 
 
 CBA enables customers to authenticate directly against Azure AD with an X.509 certificate that is issued from their own Public Key Infrastructure (PKI).
 
@@ -19,37 +19,26 @@ When a user is enabled for CBA the sign in flow works like this.
 1. The user picks the client certificate to complete the sign-in.
 
 Setting up CBA itself in Azure AD is quite straightforward, but it does have a dependency on an on-premises PKI infrastructure which can be relatively complex to setup, and which of course requires a Hybrid identity environment. For this lab we can drop the PKI requirement and configure and test CBA by using PowerShell to generate a self-signed Certificate Authority and self-signed user certificates. This approach has the added benefit of allowing cloud-only deployments to test out and use CBA (for lab purposes only of course).
+
 ## Lab success exit criteria
 Using the *New-SelfSignedCertificate* cmdlet you will create a Root Certificate Authority certificate and then upload this to Azure AD and then enable the Cert Based Auth method policy. You will then create a User Client certificate that is signed by the same Root Certificate Authority and place this into the certificate store on your host machine allowing you to then test signing in to Azure AD with this user cert.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Step 1. Create the Root Certificate Authority and User certificate
 These steps are performed on your host machine.
 
 1. Open an administrator elevated PowerShell session and copy and paste the following code and run it. 
 
-   **Note:** Do not close this PowerShell session as we need it to create the user certificate in Step 2 using the contents of the $certprod variable.
+   **Note:** Do not close this PowerShell session as we need it to create the user certificate in Step 2 using the contents in the *$certprod* variable.
 
-$certprod = New-SelfSignedCertificate -Type Custom -KeySpec Signature -Subject "CN=TestRootCA" -KeyExportPolicy Exportable -HashAlgorithm sha256 -KeyLength 2048 -CertStoreLocation "Cert:\LocalMachine\My" -KeyUsageProperty Sign -KeyUsage CertSign|
-| :- |
+```
+$certprod = New-SelfSignedCertificate -Type Custom -KeySpec Signature -Subject "CN=TestRootCA" -KeyExportPolicy Exportable -HashAlgorithm sha256 -KeyLength 2048 -CertStoreLocation "Cert:\LocalMachine\My" -KeyUsageProperty Sign -KeyUsage CertSign
+```
 
 This just created a Root Certificate called “TestRootCA” in the *Local Computer Certificate Store* of your machine. You can verify this by running **certlm.msc** from ***Start/Run*** and expanding the **Personal/Certificates** folder.
 
 ![Graphical user interface, text, application Description automatically generated](img/pswdlesscba.001.png)
 
-1. Whilst still in *Local Computer Certificate Store* we need to export the TestRootCA to a file so it can be uploaded to Azure AD. To do this:
+2. Whilst still in *Local Computer Certificate Store* we need to export the TestRootCA to a file so it can be uploaded to Azure AD. To do this:
    1. Right click on the TestRootCA object and choose **All Tasks > Export**
    1. Click **Next** on the **Certificate Export Wizard** page
    1. Click **Next** on the **Export Private Key** page leave it set to **No**

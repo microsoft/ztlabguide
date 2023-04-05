@@ -20,9 +20,9 @@ Users can register themselves for these passwordless methods (as dictated by the
 
 In the case of phone sign-in, Azure AD detects that the user has a strong credential registered after they input their UPN. This triggers the passwordless authentication flow where the user is presented with a 2-digit number on the login screen, and a corresponding notification is sent to their device where they input the same 2-digit number. From there, they will be asked to provide their device passcode/biometric to complete the authentication approval. This is considered a multi-factor approval in that the user must possess something they have (the Authenticator app), and something they know (the device passcode/biometric).
 
-# Lab success exit criteria
+## Lab success exit criteria
 Using the Authenticator App (on IOS or Android), you will enable phone-sign for a test user and then test logging in to Azure AD by performing a number matching sequence via the app instead of using a password.
-#
+##
 
 ## Step 1. Enable phone sign-in
 1. Sign in to <https://aad.portal.azure.com> as your global admin
@@ -77,6 +77,7 @@ To further improve security for phone sign-in and MFA notifications we will now 
 
 ## Step 5. Test additional context notifications
 1. Open an In-Private Edge session and navigate to <https://myapps.microsoft.com>
+
 1. Enter in the UPN of the user you enabled phone sign-in for.
 1. After clicking **Next,** you should get a phone-sign notification on your phone.
 1. Notice the extra details that now show in the app notification.

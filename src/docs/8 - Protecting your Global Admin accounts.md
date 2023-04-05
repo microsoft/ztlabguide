@@ -1,7 +1,7 @@
 ﻿---
 id: pim
 title: Protect Your Global Admins & Enforce Least Privileged With PIM
-sidebar_label: Least Privilege Config
+sidebar_label: Enforce Least Privilege with PIM
 slug: /pim
 ---
 
@@ -16,6 +16,7 @@ By the end of this lab, you will have created a new baseline MFA conditional acc
 [Security Defaults](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-fundamentals-security-defaults) provide baseline protection for a tenant out of the box (require MFA for all users, block legacy auth) but its functionality is superseded by conditional access with the ownership of Azure AD P1 licenses. We will now turn this off.
 
 1. Sign-in to <https://aad.portal.azure.com>
+
 1. Go to **Azure Active Directory > Properties** and select **Manage security defaults**.
 1. Set the **Enable security defaults** toggle to **No** and hit **Save**.
 
@@ -24,6 +25,7 @@ By the end of this lab, you will have created a new baseline MFA conditional acc
 This user will have permanent standing membership to the Global administrator role.
 
 1. In the Azure Active Directory dashboard click **Users** in the left pane.
+
 1. Click **+ New user** and choose the **Create a new user** option.
 1. In the **New user** pane, enter **DedicatedAdmin** in the **User name**, **Name**, & **First name** boxes.
 1. Under **Password**, select **Let me create the password**, and then enter a strong password. ***Note:*** You will be asked to change this password the first time you login with this account.
@@ -46,7 +48,7 @@ This user will ***not*** have permanent membership to the Global administrator r
 1. Now assign a **Microsoft 365 E5 Developer** license to this new user as well.
 1. Login, change the password, and register for MFA using an InPrivate Edge session via <https://aka.ms/mfasetup> for this new user as well.
 
-```To recap, at this point you now have these two new users that we will begin testing with.```
+To recap, at this point you now have these two new users that we will begin testing with.
 
 - DedicatedAdmin (Is a member of the Global Administrator role)
 - TemporaryAdmin (Is **not** a member of any privileged roles)
@@ -63,6 +65,7 @@ This user will ***not*** have permanent membership to the Global administrator r
 Conditional access policies can become very detailed and cumbersome to manage overtime, so to continue with the ***keeping it simple*** mantra of this lab guide we will be using the new [Conditional Access Templates](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policy-common#conditional-access-templates-preview) feature that provide a convenient way to deploy new CA policies aligned with Microsoft recommendations and naming policies, and which are designed to provide maximum protection for the tenant.
 
 1. Click **Azure Active Directory > Security > Conditional Access**.
+
 1. In the **Conditional access – Policies** pane, select **+ New policy from template (Preview).**
 1. Under **Customize your build** select **Identities** and click **Next.**
 1. Under **Select template** choose the **Require multifactor authentication for admins.** template, leave the policy name as is, and put the **Policy state** to **On** then click **Next**.
@@ -83,6 +86,7 @@ You should now have these two CA policies in your tenant prefixed with ***CA001*
 To test the first MFA policy, **CA001: Require multifactor authentication for admins**
 
 1. Open a new InPrivate Edge session.
+
 1. Browse <https://portal.azure.com> (or any portal of your choice)
 1. Sign in with the **DedicatedAdmin** account.  **Result →** You should be prompted for MFA.  
 1. Open a new InPrivate Edge session. 
@@ -126,6 +130,7 @@ To configure PIM in the tenant:
 Sign in in using the TemporaryAdmin account and activate the new role assignment.
 
 1. Open a new InPrivate Edge session and browse <https://aad.portal.azure.com>.
+
 1. Sign in with the **TemporaryAdmin** account.
 1. In the Azure AD portal go to **All Services** in the top left-hand navigation pane.
 1. In the right-hand pane click on **Azure AD Privileged Identity Management**.
@@ -151,6 +156,4 @@ Sign in in using the TemporaryAdmin account and activate the new role assignment
 
 ![Graphical user interface, text, application, email Description automatically generated](img/pim.011.png)
 
-You now have full privileged access to the tenant, for 8 hours.
-
-##
+You now have full privileged access to the tenant that is time bound for 8 hours.
