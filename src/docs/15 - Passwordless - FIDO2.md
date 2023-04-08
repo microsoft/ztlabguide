@@ -15,23 +15,26 @@ After enabling the FIDO2 Security Key authentication methods policy, you will re
 
 ## Step 1. Enable the FIDO2 security key authentication method policy
 1. Sign-in to the Azure AD portal <https://aad.portal.azure.com>
+
 1. Browse to **Azure Active Directory** > **Security** > **Authentication methods** > **Policies**
 1. Click the **FIDO2 Security Key** method and choose the following options
-   1. **Enable** - Yes or No
-   1. **Target** - All users
-   1. **Save** the configuration
+   - **Enable** - Yes or No
+   - **Target** - All users
+   -  **Save** the configuration
 ## Step 2. User registration of a FIDO2 key
 Select a test user for whom you would like to register the key against and then perform the following steps as this user.
 
 1. Open an In-Private Edge session and browse to [https://myprofile.microsoft.com](https://myprofile.microsoft.com/) and sign in as your chosen test user.
+
 1. Click the **Update Info** link in **Security Info** tile.
 1. Add a FIDO2 Security key by clicking + **Add sign-in method** and choosing **Security key**.
 
-   ![Graphical user interface, text, application Description automatically generated](img/pswdlessfido2.001.png)
+![Graphical user interface, text, application Description automatically generated](img/pswdlessfido2.001.png)
 
 ![Graphical user interface, application Description automatically generated](img/pswdlessfido2.002.png)
 
-1. Choose the **USB device** or **NFC device** option that is applicable to your FIDO2 device.
+4. Choose the **USB device** or **NFC device** option that is applicable to your FIDO2 device.
+
 1. Have your key ready and choose **Next**.
 1. A box will appear and will ask the user to create/enter a PIN for the security key, then perform the required gesture for the key, either biometric or touch.
 1. The user will then be asked to provide a meaningful name for the key so the user can identify which one if they happen to have multiple. Click **Next**.
@@ -39,10 +42,12 @@ Select a test user for whom you would like to register the key against and then 
 
 ## Step 3. Sign in with a FIDO2 security
 1. Open an In-Private Edge session and browse to <https://myapps.microsoft.com>
+
 1. Input the UPN of the user that you registered the FIDO2 key against in step 2 and click the **Sign-in Options** tile at the bottom of the page and select **Sign in with a security key.**
 
 
 ![Graphical user interface, text, application Description automatically generated](img/pswdlessfido2.003.png)
 
-1. Ensure your FIDO2 key is inserted into your device and then select **Security key** and click **OK**
+3. Ensure your FIDO2 key is inserted into your device and then select **Security key** and click **OK**
+
 1. Enter the PIN that you created during registration, click **OK** and then perform the required gesture (biometric or touch) to complete the sign-in. 

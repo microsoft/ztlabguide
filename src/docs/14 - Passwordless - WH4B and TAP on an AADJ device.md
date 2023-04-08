@@ -185,4 +185,4 @@ You can correlate this device information against the **Azure AD** > **Devices**
 
 ![](img/pswdlesswhfb.021.png)
 
-**Note:** Now that you have completed this lab you can safely shut down the virtual machine, but please retain the VM itself as we will be using it in later labs that involve Intune and testing conditional access device access rules.
+**Note:** Now that you have completed this lab you can safely shut down the virtual machine, but please retain the VM itself as we will be using it in later labs that involve Intune and Defender.
