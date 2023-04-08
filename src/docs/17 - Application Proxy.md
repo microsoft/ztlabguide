@@ -17,7 +17,8 @@ An App Proxy Demo Installer utility will be used to deploy two websites on your 
 ## Step 1. Configure the on-premises websites
 1. From <https://portal.azure.com> log into your **DC VM** using Azure Bastion.
 
-1. From within the VM, download the AppProxyDemo.zip file from <https://1drv.ms/u/s!AjWydXh6TnNyi5onkQ4q7i5n41dSFg?e=i2dTUR> 
+1. From within the VM, download the [AppProxyDemo.zip](./assets/appproxydemo.zip) file.
+
 1. Once downloaded, extract the zip file to any location of your choosing.
 1. In the extracted AppProxyDemo folder, right click on the file called **“Bootstrap.ps1”** and choose **Properties**.
 1. On the **General** tab check the **Unblock** box at the bottom and then click **Apply** and **OK**.
