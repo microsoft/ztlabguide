@@ -39,6 +39,7 @@ This user will have permanent standing membership to the Global administrator ro
 This user will ***not*** have permanent membership to the Global administrator role, and instead will request access via PIM to just-in-time into the role.
 
 1. In the Azure Active Directory dashboard click **Users.**
+
 1. Click **+ New user** and choose the **Create a new user** option.
 1. In the **New user** pane, enter **TemporaryAdmin** in the **User name**, **Name**, & **First name** boxes.
 1. Under **Password**, select **Let me create the password**, and then enter a strong password. 
@@ -48,10 +49,10 @@ This user will ***not*** have permanent membership to the Global administrator r
 1. Now assign a **Microsoft 365 E5 Developer** license to this new user as well.
 1. Login, change the password, and register for MFA using an InPrivate Edge session via <https://aka.ms/mfasetup> for this new user as well.
 
-To recap, at this point you now have these two new users that we will begin testing with.
+To recap, at this point you now have these two new users that we will begin testing with.    
 
-- DedicatedAdmin (Is a member of the Global Administrator role)
-- TemporaryAdmin (Is **not** a member of any privileged roles)
+***DedicatedAdmin*** (Is a member of the Global Administrator role)    
+***TemporaryAdmin*** (Is not a member of any privileged roles)
 
 
 
@@ -59,8 +60,8 @@ To recap, at this point you now have these two new users that we will begin test
 
 #### We will now create two new conditional access policies that will:
 
-- **Require MFA for accounts that hold membership to privileged admin directory roles.**
-- **Require MFA if the sign-in risk is determined to be medium or high.**
+***Require MFA for accounts that hold membership to privileged admin directory roles.***    
+***Require MFA if the sign-in risk is determined to be medium or high.***
 
 Conditional access policies can become very detailed and cumbersome to manage overtime, so to continue with the ***keeping it simple*** mantra of this lab guide we will be using the new [Conditional Access Templates](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policy-common#conditional-access-templates-preview) feature that provide a convenient way to deploy new CA policies aligned with Microsoft recommendations and naming policies, and which are designed to provide maximum protection for the tenant.
 

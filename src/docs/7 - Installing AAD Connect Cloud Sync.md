@@ -24,13 +24,16 @@ After installing the Cloud Sync agent in the on-premises Active Directory, you w
 The basic SKU of Azure Bastion doesn’t allow the copy or pasting of files over a remote session (it does allow the copy/paste of text though). To work around this, one option is to upgrade Azure Bastion to the standard SKU which would increase the monthly Azure credit unnecessarily. The suggested option is to download the required files throughout the lab directly onto the VM itself, to do this we need to turn off the IE Enhanced Security settings on the server and then install Edge to limit the use of Internet Explorer.
 
 1. Log into the DC VM using Azure Bastion.
+
 2. Go to **Start/Server Manager/Local Server** and toggle **IE Enhanced Security Configuration** to **Off** for both Administrators and Users.
 
 ![](img/cloudsync.002.png)
 
 3. Open Internet Explorer from the shortcut on the task bar and go to <https://www.microsoft.com/en-us/edge> and then choose the **Download For Windows Server** option and run through the setup to install Edge. Once installed, pin Edge to the task bar.
+
 ## Step 2. Download, install Azure AD Connect Cloud Sync
 1. Whilst still connected to the DC VM via Azure Bastion.
+
 1. Go to <https://aad.portal.azure.com> and login with the Global Admin account.
 1. Click **Azure Active Directory** and in the left pane under **Manage** click **Azure AD Connect**.
 1. In the middle pane click the **Manage Azure AD cloud sync** link.
@@ -42,6 +45,7 @@ The basic SKU of Azure Bastion doesn’t allow the copy or pasting of files over
 ![Graphical user interface, text, application Description automatically generated](img/cloudsync.004.png)
 
 6. This will download a file called [AADConnectProvisioningAgentSetup](https://docs.microsoft.com/en-us/azure/active-directory/cloud-sync/how-to-install).exe to the Downloads folder. Open the file to start the setup, check the licence box, and click **Install**.
+
 7. This will spawn the agent configuration wizard, click **Next** on the welcome screen.
 
 ![](img/cloudsync.005.png)
@@ -96,12 +100,14 @@ Now that the agent has been successfully installed, provisioning settings will n
 To validate that Cloud Sync is working we will now create a user in the On-Premises Active Directory and synchronize that user to your Azure AD tenant.
 
 1. Connect to the DC VM via Azure Bastion.
-2. Go to **Start/Run** and type DSA.msc and hit enter. This will open the **Active Directory Users and Computers** snap-in. Expand the domain object and then right click on the **Users** organizational unit object and select **New** → **User.**
+
+2. Go to **Start/Run** and type DSA.msc and hit enter. This will open the **Active Directory Users and Computers** snap-in. 
+3. Expand the domain object and then right click on the **Users** organizational unit object and select **New** → **User.**
 
 
 ![Graphical user interface, application Description automatically generated](img/cloudsync.017.png)
 
-3. Fill in the **New Object – User** wizard with the following details:
+4. Fill in the **New Object – User** wizard with the following details:
 
    - **First Name:** Bobby
    - **Last Name:** Smith
@@ -112,7 +118,7 @@ To validate that Cloud Sync is working we will now create a user in the On-Premi
 
 ![Graphical user interface, text, application, email Description automatically generated](img/cloudsync.018.png)
 
-Specify a password and ensure to uncheck the **User must change password at next logon** field and click **Next** to finish creating the user.
+5. Specify a password and ensure to uncheck the **User must change password at next logon** field and click **Next** to finish creating the user.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/cloudsync.019.png)
 
@@ -121,6 +127,7 @@ Specify a password and ensure to uncheck the **User must change password at next
 Cloud provisioning is scheduled to run every 2 mins. Any additions or changes to users, groups, and passwords will be sync’d to Azure AD in that scheduled window.
 
 1. To validate that your new user, Bobby Smith, was successfully provisioned into your tenant go to <https://aad.portal.azure.com> and click the **Users** icon in the left-hand pane. 
+
 1. In the right-hand blade look under **All users** and you should be able to see the new Bobby Smith user, and where the **On-premises Sync enabled** field will say **Yes**, denoting the Source of Authority for this object is the on-premises Active Directory.
 
 ![Graphical user interface, application Description automatically generated](img/cloudsync.020.png)
@@ -144,6 +151,7 @@ Cloud provisioning is scheduled to run every 2 mins. Any additions or changes to
 
 ## Step 7. Test signing in with your new user
 1. Open a new InPrivate Edge session and browse to <https://outlook.office.com>
+
 2. Sign-in with the new user account (Bobby) that was created in the tenant. 
    **Note:** You will need to sign-in using a combination of the tenant provided UPN (bobby@domain.onmicrosoft.com) and the users on-premises password that was sync’d to the tenant via Cloud Sync.
 3. Successfully signing in will land you into Bobby’s new (empty) mailbox.
@@ -168,7 +176,6 @@ The last step of this lab involves one final configuration piece for Cloud Sync,
 
 ```
 Import-Module 'C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll'
-
 Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-Credential)
 ```
 

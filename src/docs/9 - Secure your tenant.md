@@ -27,16 +27,17 @@ Before we create the remaining CA policies, we need to first create a trusted ne
 
 1. Click **Azure Active Directory > Security > Conditional Access**.
 1. Under **Named locations** select **+ IP ranges location** and in the **New location (IP ranges)** menu on the right provide these details:   
-   **Name:** Corp Network  
-   Check the box for **Mark as trusted location**  
-   Click the **+** and under **Enter a new IPv4…** add your IP range.
+   - **Name:** Corp Network  
+   - Check the box for **Mark as trusted location**  
+   - Click the **+** and under **Enter a new IPv4…** add your IP range.
    (e.g. If your IP address was 119.18.0.166 add the range 119.18.0.166/30)   
-   Click **Add** and then click **Create**.
+3. Click **Add** and then click **Create**.
 
 ![](img/securetenant.001.png)
 
 ## Step 2. Create the conditional access policies
 1. Click **Azure Active Directory > Security > Conditional Access**.
+
 1. In the **Conditional access – Policies** pane, select **+ New policy from template (Preview).**
 1. Under **Customize your build** select **Identities** and click **Next.**
 1. Under **Select template** choose the **Securing security info registration** template, leave the policy name as is, and put the **Policy state** to **On** then click **Next**.
@@ -64,6 +65,7 @@ The purpose of this policy is to protect the MFA & SSPR registration process by 
 Once you have chosen your method to change the IP that you are appearing to come from (as Azure AD sees it), perform the following steps.
 
 1. Create a new user or choose an existing user that has not registered for MFA yet.
+
 1. Open an In-Private Edge session and navigate to <https://aka.ms/mysecurityinfo>
 1. Login, and after authenticating successfully you should be presented with a “More information required” message which is the proof-up process kicking in to register for MFA, click **Next**. You should be blocked from being able to “proof-up” at this point and presented with this message that states, “Your organization requires this information to be set from specific locations or devices.”
 
