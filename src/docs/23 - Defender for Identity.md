@@ -24,15 +24,16 @@ Using your Azure DC virtual machine, you will install the Defender for Identity 
 ## Step 1. Set up the Defender for Identity Instance
 ***Note:*** These steps all need to be performed from within your Azure VM Domain Controller (adVM).
 
-To begin the deployment, you’ll start via the Microsoft 365 Defender portal.
+To begin the deployment, you’ll start via the Microsoft 365 Defender portal at <https://security.microsoft.com>
 
 1. Connect to your Domain Controller VM using Azure Bastion.
+
 1. From within the VM, sign-in to <https://security.microsoft.com>
 1. From the left-hand navigation menu, select **Settings** and then select **Identities** to initiate the creation of the Defender for Identity Instance.
 
 ![Graphical user interface, application  Description automatically generated](img/defidentity.002.png)
 
-1. Provisioning only takes a few seconds before you will be taken to the Defender for Identity portal. 
+4. Provisioning only takes a few seconds before you will be taken to the Defender for Identity portal. 
 ## Step 2. Create the Directory Service account.
 Defender for Identity requires you to create a Directory Service account that is used by the sensor to query the domain controller so data can be tracked and analysed by the service. This account just needs to be a regular user account and does not require domain administrator privileges. To create the account:
 
@@ -41,15 +42,13 @@ Defender for Identity requires you to create a Directory Service account that is
 
 1. Fill in the **New Object – User** wizard with the following details.
 
-**First Name:** Defender
-
-**Last Name:** Identity Users
-
-**User logon name:** DefenderIdentityUser
+   - **First Name:** Defender
+   - **Last Name:** Identity Users
+   - **User logon name:** DefenderIdentityUser
 
 ![Graphical user interface, text, application  Description automatically generated](img/defidentity.003.png)
 
-Specify a password and ensure to uncheck the **User must change password at next logon** field and click **Next** to finish creating the user.
+4. Specify a password and ensure to uncheck the **User must change password at next logon** field and click **Next** to finish creating the user.
 
 ![Graphical user interface, text, application  Description automatically generated](img/defidentity.004.png)
 
@@ -62,14 +61,14 @@ Specify a password and ensure to uncheck the **User must change password at next
 
 ![Graphical user interface, text, application  Description automatically generated](img/defidentity.005.png)
 
-Click **Save.**
+4. Click **Save.**
 
 ## Step 4. Install the Sensor.
 1. Back in the Defender for Identity portal, under **General**, click **Sensors** and then click the **Add sensor** button.
 
 ![](img/defidentity.006.png)
 
-1. On the **Add a new sensor** flyout pane, click the **Download installer** option and ensure to copy and paste the **Access key** into notepad as you will need it again during installation of the sensor.
+2. On the **Add a new sensor** flyout pane, click the **Download installer** option and ensure to copy and paste the **Access key** into notepad as you will need it again during installation of the sensor.
 
 ![Graphical user interface, text, application, email  Description automatically generated](img/defidentity.007.png)
 
@@ -77,26 +76,28 @@ If nothing happens when clicking the Download installer link, then Edge is most 
 
 ![Graphical user interface, text, application, chat or text message  Description automatically generated](img/defidentity.008.png)
 
-1. The installer will download a file called **Azure ATP Sensor Setup.zip** located in your Downloads folder. Extract the zip file and then click the Azure ATP Sensor Setup executable to begin the installation. Defender for Identity was previously called “Azure Advanced Thread Protection (ATP)” hence the name of the setup file.
+3. The installer will download a file called **Azure ATP Sensor Setup.zip** located in your Downloads folder. Extract the zip file and then click the Azure ATP Sensor Setup executable to begin the installation.   
+Defender for Identity was previously called “Azure Advanced Thread Protection (ATP)” hence the name of the setup file.
 
 ![Graphical user interface, text, application Description automatically generated](img/defidentity.009.png)
 
 ![Graphical user interface, text, application Description automatically generated](img/defidentity.010.png)
 
-1. On the **Configure the Sensor** page copy and paste in the Access key and click **Install**.
+4. On the **Configure the Sensor** page copy and paste in the Access key and click **Install**.
 
 ![Graphical user interface, text, application Description automatically generated](img/defidentity.011.png)
 
 ![Graphical user interface, application  Description automatically generated](img/defidentity.012.png)
 
-1. Once the sensor is installed go back to the Defender for Identity portal and under **Sensors** you should now see the sensor on the domain controller show up and it should show as “Running”. Refresh the page if you don’t see straight away.
+5. Once the sensor is installed go back to the Defender for Identity portal and under **Sensors** you should now see the sensor on the domain controller show up and it should show as “Running”. Refresh the page if you don’t see straight away.
 
-   ![A screenshot of a computer  Description automatically generated](img/defidentity.013.png)
+![A screenshot of a computer  Description automatically generated](img/defidentity.013.png)
 
 ## Step 5. Turn off the learning period feature.
 The alerts generated by Defender for Identity are based on various factors such as profiling, deterministic detection, machine learning, and behavioral algorithms that it has learned about your network. The full learning process for Defender for Identity can take up to 30 days per domain controller. To speed up this process we can turn off this learning period for alerts by enabling the **Remove learning period** feature. When enabled, every alert that is based on learning or profiling will be triggered instantly.
 
 1. In the Microsoft 365 Defender portal <https://security.microsoft.com> go to **Settings** > **Identities.** 
+
 1. Go to **Advanced settings** in the left-hand menu.
 1. Disable the learning period by toggling the **Remove learning period** button to **On**.
 
@@ -105,6 +106,7 @@ The alerts generated by Defender for Identity are based on various factors such 
 Defender for Identity has an excellent [Attack simulations](https://learn.microsoft.com/en-us/defender-for-identity/playbooks) playbook that outlines how to perform simple suspicious activities to generate alerts. For this lab I’m going to provide the steps on how to perform a simple DNS reconnaissance using nslookup so you can see the resulting alert that is generated in the portal, but I recommend using the playbook to see some other simulations that you can run in order to go deeper in exploring Defender for Identity capabilities.
 
 1. Connect to the DC VM via Azure Bastion.
+
 1. Open a command prompt and type **nslookup**
 1. Type **server adVM** (Replace adVM with the name of your DC if it is different)
 1. Type **ls -d ztlab.local** (Replace ztlab.local with the FQDN of your internal AD domain)
@@ -112,19 +114,19 @@ Defender for Identity has an excellent [Attack simulations](https://learn.micros
 
 ![Text  Description automatically generated](img/defidentity.015.png)
 
-1. Go to the Microsoft 365 Defender portal and from the search bar at the top perform a search for the name of your DC “adVM” and then click the device object returned in the result.
+6. Go to the Microsoft 365 Defender portal and from the search bar at the top perform a search for the name of your DC “adVM” and then click the device object returned in the result.
 
 ![Graphical user interface, application, Teams  Description automatically generated](img/defidentity.016.png)
 
-1. Click on the **Open device page**. 
+7. Click on the **Open device page**. 
 
 ![Graphical user interface, application  Description automatically generated](img/defidentity.017.png)
 
-1. On the **Device summary** page then click on **Timeline**.
+8. On the **Device summary** page then click on **Timeline**.
 
 ![Graphical user interface, text, application  Description automatically generated](img/defidentity.018.png)
 
-1. Under the **Timeline** you should see the following event logged in red for cmd.exe about the nslookup command we just ran to attempt a DNS zone transfer.
+9. Under the **Timeline** you should see the following event logged in red for cmd.exe about the nslookup command we just ran to attempt a DNS zone transfer.
 
 ![Graphical user interface, text, application, email  Description automatically generated](img/defidentity.019.png)
 

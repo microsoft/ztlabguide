@@ -19,77 +19,77 @@ You will do this by creating an Android device compliance policy in Intune that 
 Before Android devices can enrol into Intune you need to enable an enrolment prerequisite. There are a few choices here depending on the specific customer requirements, but for the purposes of this lab we are going to choose the easiest option called Android Device Administrator. 
 
 1. Sign into the Intune portal <https://endpoint.microsoft.com>
+
 1. Select **Devices > Android > Android enrolment.**
 1. Scroll to the bottom of the page and click the **prerequisites** tile under **Android device administrator** option.
 
 ![Graphical user interface, text, application Description automatically generated](img/intmdm.001.png)
 
-1. Under the **Personal and corporate-owned devices with device administrator privileges** page check the box next to **Use device administer to manage devices** and click **Ok.**
+4. Under the **Personal and corporate-owned devices with device administrator privileges** page check the box next to **Use device administer to manage devices** and click **Ok.**
 
 ![A picture containing text Description automatically generated](img/intmdm.002.png)
 
 ## Step 2. Create an Android device compliance policy.
 1. Still in the Intune portal <https://endpoint.microsoft.com>
+
 1. Select **Devices > Compliance policies > + Create policy.** 
 1. In the **Create a policy** pane select the following options:
-
-**Platform:** Android device administrator
-**Profile type:** Android compliance policy (this should be greyed out)
+   - **Platform:** Android device administrator
+   - **Profile type:** Android compliance policy (this should be greyed out)
 
 ![Graphical user interface, application Description automatically generated](img/intmdm.003.png)
 
-Click **Create.**
+4. Click **Create.**
 
-1. On the **Basics** page, add the following value:
-
-**Name:** Android Device Compliance Policy
+1. On the **Basics** page, add the following value: 
+   - **Name:** Android Device Compliance Policy
 
 ![Graphical user interface, text, application Description automatically generated](img/intmdm.004.png)
 
-1. Click **Next** to display the **Compliance settings** page. Expand the **Device Health** section and set the following:
+6. Click **Next** to display the **Compliance settings** page. Expand the **Device Health** section and set the following:
 
-**Rooted devices:** Block
+   - **Rooted devices:** Block
 
 ![Graphical user interface, website Description automatically generated](img/intmdm.005.png)
 
 
 
 
-1. Click **Next** to display the **Actions for noncompliance** page. 
+7. Click **Next** to display the **Actions for noncompliance** page. 
    Under the **Action** column for **Mark device noncompliant** select the **Send push notification** option.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/intmdm.006.png)
 
-1. Click **Next** to display the **Assignments** page. Under **Included groups** click **Add all users**.
+8. Click **Next** to display the **Assignments** page. Under **Included groups** click **Add all users**.
 
 ![Graphical user interface, text, application, chat or text message Description automatically generated](img/intmdm.007.png)
 
 
-1. Click **Next** to go to the **Review + create** page and then click the **Create** button to finish creating the policy.
+9. Click **Next** to go to the **Review + create** page and then click the **Create** button to finish creating the policy.
 
 ## Step 2. Create a device based conditional access policy.
 1. In the Azure AD portal select **Security > Conditional access > + New policy.**
 
-1. For the **Name**, prefix the name of the policy with the recommended naming framework we used in previous labs (i.e., “CA012: Android Device Compliance Policy For Email”).
+1. For the **Name**, prefix the name of the policy with the recommended naming framework we used in previous labs (i.e., *“CA012: Android Device Compliance Policy For Email”*).
 1. Under **Assignments**, select **Users and groups**. On the **Include** tab, select **All users**.
 1. Under **Cloud apps or actions**. Because we want to protect Microsoft 365 Exchange Online email, we'll select it by following these steps:
-   1. On the **Include** tab, choose **Select apps**. Choose **Select**.
-   1. In the applications list, select **Office 365 Exchange Online**, and then choose **Select**.
+   - On the **Include** tab, choose **Select apps**. Choose **Select**.
+   -  In the applications list, select **Office 365 Exchange Online**, and then choose **Select**.
 1. Under **Conditions** > **Device platforms**.
-   1. Under **Configure**, select **Yes**.
-   1. On the **Include** tab, choose **Select device platforms**, and tick **Android**.
-   1. Select **Done**.
+   - Under **Configure**, select **Yes**.
+   - On the **Include** tab, choose **Select device platforms**, and tick **Android**.
+   - Select **Done**.
 1. Under **Conditions** > **Client apps**.
-   1. Under **Configure**, select **Yes**.
-   1. For this lab, select **Mobile apps and desktop clients** (which refers to apps like Outlook for iOS and Outlook for Android). Clear all other check boxes.
-   1. Select **Done**.
+   - Under **Configure**, select **Yes**.
+   - For this lab, select **Mobile apps and desktop clients** (which refers to apps like Outlook for iOS and Outlook for Android). Clear all other check boxes.
+   - Select **Done**.
 
 1. Under **Access controls**, select **Grant**.
-   1. On the **Grant** pane, select **Grant access**.
-   1. Select **Require device to be marked as compliant**.
-   1. Select **Require approved client app**.
-   1. Under **For multiple controls**, select **Require all the selected controls**. This setting ensures that both requirements you selected are enforced when a device tries to access email.
-   1. Choose **Select**.
+   - On the **Grant** pane, select **Grant access**.
+   - Select **Require device to be marked as compliant**.
+   - Select **Require approved client app**.
+   - Under **For multiple controls**, select **Require all the selected controls**. This setting ensures that both requirements you selected are enforced when a device tries to access email.
+   - Choose **Select**.
 1. Under **Enable policy**, select **On**. Click **Create**.
 
 ## Step 3. Testing the device compliance policy.
@@ -100,48 +100,40 @@ With these policies created any Android device that now attempts to sign in to E
 
 ![Graphical user interface, text, application Description automatically generated](img/intmdm.008.png)
 
-Click **Continue**.
+3. Click **Continue**. This will take you through the process of enrolling your device and will inform you that you need to install the Intune Company Portal app. As we already have this app installed from the previous lab, we can just launch the Intune Company Portal app to begin the process.
 
-1. This will take you through the process of enrolling your device and will inform you that you need to install the Intune Company Portal app. As we already have this app installed from the previous lab, we can just launch the Intune Company Portal app to begin the process.
 1. Click the Sign In option and authenticate as your test user that you have been using on the device.
 
 ![](img/intmdm.009.png)
 
-1. Once in the app click the **Devices** tab and click on the exclamation mark next to your “My Android” device object to begin enrolment.
+5. Once in the app click the **Devices** tab and click on the exclamation mark next to your “My Android” device object to begin enrolment.
 
 ![](img/intmdm.010.png)
 
-1. On the next screen click on the **This device is not managed** option.
+6. On the next screen click on the **This device is not managed** option.
 
 ![Graphical user interface, application Description automatically generated](img/intmdm.011.png)
 
-1. On the next screen click on the **Begin** button at the bottom.
+7. On the next screen click on the **Begin** button at the bottom.
 
 ![Graphical user interface, text, application Description automatically generated](img/intmdm.012.png)
 
-1. Click through the next few screens until you reach the **Activate this device admin app** option and click on the **Activate this device admin app**.
+8. Click through the next few screens until you reach the **Activate this device admin app** option and click on the **Activate this device admin app**.
 
 ![](img/intmdm.013.png)
 
-1. This will complete the Device Registration process and push the management profile to the device.
+9. This will complete the Device Registration process and push the management profile to the device.
 
 ![Graphical user interface, text, application Description automatically generated](img/intmdm.014.png)
 
-1. You should now see the Android device appear in the Intune portal under **Devices > Android > Android Devices** and where it’s compliance state should show as “Compliant”.
+10. You should now see the Android device appear in the Intune portal under **Devices > Android > Android Devices** and where it’s compliance state should show as “Compliant”.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/intmdm.015.png)
 
-1. Back on the emulator, switch back to the Outlook app and you should now have access to email once again.
+11. Back on the emulator, switch back to the Outlook app and you should now have access to email once again.
+
 1. Given the device is now controlled by Intune, you can explore some of the MDM capabilities such as Remote Lock, or wiping a device.
 1. In the Intune portal select **Devices** > **All devices**.
 1. In the list of devices, select the Android device, and then select the **Remote lock** action.
 
 ![Graphical user interface, text, application Description automatically generated](img/intmdm.016.png)
-
-
-
-
-
-
-
-
