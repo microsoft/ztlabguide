@@ -101,15 +101,12 @@ To validate that Cloud Sync is working we will now create a user in the On-Premi
 
 ![Graphical user interface, application Description automatically generated](img/cloudsync.017.png)
 
-3. Fill in the **New Object – User** wizard with the following details.
+3. Fill in the **New Object – User** wizard with the following details:
 
-**First Name:** Bobby
-
-**Last Name:** Smith
-
-**Full Name:** Bobby Smith
-
-**User logon name:** Bobby
+   - **First Name:** Bobby
+   - **Last Name:** Smith
+   - **Full Name:** Bobby Smith
+   - **User logon name:** Bobby
 
 **Note:** The users UPN suffix will be the internal AD Domain (i.e. @domain.local), but as this is not a verified domain in the tenant the sync processes will drop this UPN in Azure AD and instead give the user a UPN of @__tenantname__.onmicrosoft.com. This is expected and adequate for our lab use requirements to keep things as simple as possible.
 

@@ -44,9 +44,9 @@ The first step you take is to set up the service-to-service connection between I
 7. Now return to **Microsoft Defender for Endpoint** page back in the Intune portal.
 
 8. Under **Compliance policy evaluation**, configure the following:
--  **Connect Android devices** to Microsoft Defender for Endpoint: **On**
-- **Connect iOS devices** to Microsoft Defender for Endpoint: **On**
-- **Connect Windows devices** to Microsoft Defender for Endpoint: **On** 
+   -  **Connect Android devices** to Microsoft Defender for Endpoint: **On**
+   - **Connect iOS devices** to Microsoft Defender for Endpoint: **On**
+   - **Connect Windows devices** to Microsoft Defender for Endpoint: **On** 
 
 9. Click **Save.**
 
@@ -105,6 +105,7 @@ Network protection helps to prevent employees from using any application to acc
 ![](img/defendpoint.007.png)**
 
 1. On **Scope tags** you can leave this empty. Click **Next.**
+
 1. On the **Assignments** tab, choose both the **Add all users** and **Add all devices** and click **Next**.
 1. Select **Create** to finish creating the policy Review all the information, and then select Create.
 
@@ -116,15 +117,15 @@ To verify that the device has been properly onboarded to Defender for Endpoint a
 1. Go to **Start** and type **cmd** and then right-click **Command Prompt** and select **Run as administrator**.
 1. From the elevated Command Prompt window copy and paste the command below. The Command Prompt window will close automatically once it runs.
 
-```python
- powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'
-```
+
+ |<p><br/>powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'</p>
+ | :- |
 
 4. After a few minutes a new alert against the device with a severity of Medium will appear in the Microsoft 365 Defender portal (<https://security.microsoft.com>) under **Incidents & alerts > Alerts**.
 
 ![Graphical user interface, text, application, email Description automatically generated](img/defendpoint.008.png)
 
-1. Click on the **Suspicious PowerShell command line** alert to view more details about the suspicious activity.
+5. Click on the **Suspicious PowerShell command line** alert to view more details about the suspicious activity.
 
 ![](img/defendpoint.009.png)
 
