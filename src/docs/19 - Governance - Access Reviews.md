@@ -22,23 +22,20 @@ Building on the previous Entitlement Management lab, we will create an access re
    - **Group:** Find and add the *Partner Collaboration* group
    - **Scope:** Guest users only
    - **Inactive users (on tenant level) only**: Leave unchecked
-   - Click **Next: Reviews** <br>
-   <br>
+   - Click **Next: Reviews** 
 1. Under **Reviews** set the following:
    - **Multi-state review:** Leave unchecked
    - **Specify reviewers** > **Select reviewers:** Users review their own access
    - **Specific recurrence of review**
       - **Duration (in days):** 1
       - **Review recurrence:** One time
-      - **Start date:** Todays date <br>
-      <br>
+      - **Start date:** Todays date
 1. Click **Next: Settings**. Under **Settings** set the following:
    -  **Auto apply results to resource:** Check this box
    - **If reviewers don’t respond:** Remove access
    - **Action to apply on denied guest user:** Remove user’s membership from the resource
    - **At the end of the review, send notifications to:** Add your Global Admin
-   - Leave the remaining settings as default. <br>
-   <br>
+   - Leave the remaining settings as default.
 1. Click Next: **Review + Create.**
 1. Name the review **“Review Guest Access”** and then click the **Create** button at the bottom of the page.
 1. After the access review has been created you’ll be returned to the Access reviews dashboard where the review should show up and the status should move from **Not Started** to **Active**.

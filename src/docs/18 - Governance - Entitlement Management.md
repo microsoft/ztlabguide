@@ -21,8 +21,7 @@ This lab will involve inviting an external user into your tenant for collaborati
    - **Name:** Partner Collaboration
    - **Description:** Team for working with external partners
    - **Team owners:** Leave yourself (Global Admin) which should already be added
-   - **Privacy:** Public <br>
-   <br>
+   - **Privacy:** Public
 1. Click **Apply** to create the team.
 
 ## Step 2. Create the access package.
@@ -34,7 +33,7 @@ This lab will involve inviting an external user into your tenant for collaborati
 
    - **Name:** Partner Access
    - **Description:** Access for external partners pending approval.
-   - **Catalog:** Leave this set to General. <br><br>
+   - **Catalog:** Leave this set to General.
 
 1. Click **Next: Resources roles**
 1. On the **Resource roles** tab. 
@@ -54,15 +53,15 @@ This lab will involve inviting an external user into your tenant for collaborati
    - For **Approver** scenario select **Choose specific approvers** and click **+ Add approvers** and then add yourself (the Global Admin).
    - For **Decision must be made in how many days?** leave this as **14.**
    - For **Require approver justification** leave this as **Yes**.
-   - Set **Enable new requests** to **Yes** to enable this access package to be requested as soon as it's created.   <br><br>
+   - Set **Enable new requests** to **Yes** to enable this access package to be requested as soon as it's created.
 
 1. Click **Next: Requestor Information**
-   - Here you can ask additional questions to collect more information from your requestor. These questions are shown on their request form and can be set to required or optional. For now you can leave these as empty. <br><br>
+   - Here you can ask additional questions to collect more information from your requestor. These questions are shown on their request form and can be set to required or optional. For now you can leave these as empty.
 
 1. Click **Next: Lifecycle**
    - In the **Expiration** section, set **Access package assignment expire** to **Number of days**.
    - Set **Assignment expire after** to **30** days. This field determines when your guest users will have to renew their access.
-   - Leave **Require access reviews** to **No**. <br><br>
+   - Leave **Require access reviews** to **No**.
 
 1. Click **Review + Create,** review the configuration, and then click **Create**.
 1. Once created, you’ll be brought back to the **Overview** page for your access package.    
