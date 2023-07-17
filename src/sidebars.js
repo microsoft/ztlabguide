@@ -25,65 +25,75 @@ const sidebars = {
         { type: "doc", id: "linkazuresub", className: "azure" },
       ],
     },
+
     {
       type: "category",
-      label: "Cloud or Hybrid",
+      label: "Identity",
       className: "azuread",
-      link: {
-        type: "doc",
-        id: "cloudorhybrid",
-      },
       items: [
-        { type: "doc", id: "clouddeploy", className: "azuread" },
         {
           type: "category",
-          label: "Hybrid Deployment",
-          className: "hybrid",
+          label: "Cloud or Hybrid",
+          className: "azuread",
           link: {
             type: "doc",
-            id: "hybriddeploy",
+            id: "cloudorhybrid",
           },
-          items: [{ type: "doc", id: "cloudsync", className: "connectsync" }],
+          items: [
+            { type: "doc", id: "clouddeploy", className: "azuread" },
+            {
+              type: "category",
+              label: "Hybrid Deployment",
+              className: "hybrid",
+              link: {
+                type: "doc",
+                id: "hybriddeploy",
+              },
+              items: [
+                { type: "doc", id: "cloudsync", className: "connectsync" },
+              ],
+            },
+          ],
+        },
+        { type: "doc", id: "pim", className: "pim" },
+        { type: "doc", id: "securetenant", className: "ca" },
+        { type: "doc", id: "license", className: "license" },
+        { type: "doc", id: "pswdprotect", className: "pswdprotect" },
+        {
+          type: "category",
+          label: "Passwordless",
+          className: "passwordless",
+          items: [
+            { type: "doc", id: "pswdlesspsi", className: "psi" },
+            { type: "doc", id: "pswdlesscba", className: "cba" },
+            { type: "doc", id: "pswdlesswhfb", className: "azure" },
+            { type: "doc", id: "pswdlessfido2", className: "azure" },
+          ],
+        },
+        {
+          type: "category",
+          label: "Applications",
+          className: "allapps",
+          items: [
+            { type: "doc", id: "saasapp", className: "apps" },
+            { type: "doc", id: "appproxy", className: "appproxy" },
+          ],
+        },
+        {
+          type: "category",
+          label: "Governance",
+          className: "governance",
+          items: [
+            { type: "doc", id: "goventmgmt", className: "entmgmt" },
+            { type: "doc", id: "govaccrev", className: "accessreview" },
+            { type: "doc", id: "govlcw", className: "lcw" },
+          ],
         },
       ],
     },
-    { type: "doc", id: "pim", className: "pim" },
-    { type: "doc", id: "securetenant", className: "ca" },
-    { type: "doc", id: "license", className: "license" },
-    { type: "doc", id: "pswdprotect", className: "pswdprotect" },
     {
       type: "category",
-      label: "Passwordless",
-      className: "passwordless",
-      items: [
-        { type: "doc", id: "pswdlesspsi", className: "psi" },
-        { type: "doc", id: "pswdlesscba", className: "cba" },
-        { type: "doc", id: "pswdlesswhfb", className: "azure" },
-        { type: "doc", id: "pswdlessfido2", className: "azure" },
-      ],
-    },
-    {
-      type: "category",
-      label: "Applications",
-      className: "allapps",
-      items: [
-        { type: "doc", id: "saasapp", className: "apps" },
-        { type: "doc", id: "appproxy", className: "appproxy" },
-      ],
-    },
-    {
-      type: "category",
-      label: "Governance",
-      className: "governance",
-      items: [
-        { type: "doc", id: "goventmgmt", className: "entmgmt" },
-        { type: "doc", id: "govaccrev", className: "accessreview" },
-        { type: "doc", id: "govlcw", className: "lcw" },
-      ],
-    },
-    {
-      type: "category",
-      label: "Intune",
+      label: "Devices",
       className: "intune",
       items: [
         { type: "doc", id: "intappprot", className: "intune" },
@@ -92,7 +102,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Defender",
+      label: "Threat Protection",
       className: "defender",
       items: [
         { type: "doc", id: "defidentity", className: "defender" },
