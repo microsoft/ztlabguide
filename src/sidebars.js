@@ -25,8 +25,11 @@ const sidebars = {
         { type: "doc", id: "linkazuresub", className: "azure" },
       ],
     },
-    {
+
+     {
       type: "category",
+      label: "Identity" ,
+      items: [ {  type: "category",
       label: "Cloud or Hybrid",
       className: "azuread",
       link: {
@@ -81,9 +84,13 @@ const sidebars = {
         { type: "doc", id: "govlcw", className: "lcw" },
       ],
     },
+         ],
+      
+    },
+   
     {
       type: "category",
-      label: "Intune",
+      label: "Devices",
       className: "intune",
       items: [
         { type: "doc", id: "intappprot", className: "intune" },
@@ -92,7 +99,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Defender",
+      label: "Threat Protection",
       className: "defender",
       items: [
         { type: "doc", id: "defidentity", className: "defender" },
