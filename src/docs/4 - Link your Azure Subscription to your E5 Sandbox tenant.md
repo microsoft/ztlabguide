@@ -29,12 +29,13 @@ To be able to link an Azure subscription to a different directory you first need
 
 ![](img/linkazuresub.004.png)
 - Select **Add Role Assignment** from the drop-down list.
-- On the **Role** tab select **Owner** and click **Next**. 
+- On the **Role** tab under the **Priveleged administrator roles** section, select **Owner** and click **Next**. 
 - On the **Members** tab leave **Assign access to** **“User, group, or service principal”**.
 - Click the **+ Select Members** link.
 - In the new right hand side fly-out menu called **Select Members** type the email address of your global admin account from your E5 tenant (e.g. <admin@contoso.onmicrosoft.com>).
 - Click on your global admin account object that was returned from the search result.
-- Click **Select** at the bottom of the page. Click **Next**, and then click **Review + assign.** 
+- Click **Select** at the bottom of the page. Click **Next**.
+- On the **Conditions** tab in the **What user can do** section, select **Allow user to assign all roles except privileged administrator roles Owner, UAA, RBAC (Recommended)**. Click **Review + assign.** 
 
 This process invites the global admin as a Guest user into the default directory that is currently associated with your new Azure subscription. You will now need to retrieve the invitation email that was sent to your global admin to complete the redemption process.
 
