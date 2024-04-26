@@ -12,6 +12,9 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+
 jobs:
     deploy:
       environment:
