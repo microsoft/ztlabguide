@@ -36,4 +36,4 @@ A visual represenation of the lab and deployment order is located at https://aka
 
 ## Lab Guide 
 
-The actual labs are located at https://ztlabguide.com 
+The actual labs are located at https://aka.ms/ztlabguide
