@@ -30,6 +30,10 @@ To simplify the deployment, an [Azure Resource Manager (ARM)](https://docs.micro
 
 3. At the next screen, deployment details will be presented in the template, an option will be provided to customize some of the template details, such as changing the VM size, VM name, AD Domain Name, etc. Again, for simplicity keep the default and input details only into the required fields that are denoted with a red asterix, and which are self-explanatory. 
 
+>[!TIP]
+>Consider choosing a region that supports the Azure Bastion Developer SKU for free access to securely connect to your VM.
+>For more information, see [Free Azure Bastion Developer SKU](https://learn.microsoft.com/en-us/azure/bastion/quickstart-developer-sku).
+
 ![Graphical user interface, text, application, email Description automatically generated](img/hybriddeploy.003.png)
 
 ***Note:*** Make sure to document the **Admin Username** and **Password**, as well as the **Domain Name** that is specified as this will be the name of the Active Directory domain and this information will be required to logon onto the domain controller once the deployment is complete. The **Domain Name** will be not used in the tenant and is not needed to be publicly resolvable in DNS, and so can be anything you like.
@@ -54,16 +58,16 @@ This ensures that the level of risk is kept low for the VM we will not be openin
 
 ![](img/hybriddeploy.007.png)
 
-1. At the top of the Virtual Machine page click **Connect** and then select **Bastion** from the drop-down menu.
+2. At the top of the Virtual Machine page click **Connect** and then select **Bastion** from the drop-down menu.
 
 ![](img/hybriddeploy.008.png)
 
-2. On the Create Bastion page that opens click the **Create Azure Bastion using defaults** button.
+3. On the Create Bastion page that opens click the **Create Azure Bastion using defaults** button. If your VM is in a region that supports the [Azure Bastion Developer SKU](https://learn.microsoft.com/en-us/azure/bastion/quickstart-developer-sku), it will automatically be selected.
 
 ![](img/hybriddeploy.009.png)
 
 
-3. Bastion will take a few minutes to create and configure itself, and once completed you can enter the required on-premises credentials to log into the VM.
+4. Bastion will take a few minutes to create and configure itself, and once completed you can enter the required on-premises credentials to log into the VM.
 
 ![Graphical user interface, application Description automatically generated](img/hybriddeploy.010.png)
 
