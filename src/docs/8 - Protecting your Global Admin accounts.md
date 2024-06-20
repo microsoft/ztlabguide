@@ -150,7 +150,6 @@ Sign in in using the TemporaryAdmin account and activate the new role assignment
 
 1. Once the page refreshes automatically you’ll receive a banner message stating that **Your roles have changed** and if you click the Active assignments tab you will see the Global Administrator role state shows as **Activated.** 
 
-
    ![Graphical user interface, text, application Description automatically generated](img/pim.010.png)
 
    ![Graphical user interface, text, application, email Description automatically generated](img/pim.011.png)
