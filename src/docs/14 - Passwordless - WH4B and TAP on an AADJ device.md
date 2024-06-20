@@ -155,7 +155,7 @@ In the output, scroll to the **User State** section and you’ll see that the **
 
 **Ngc** stands for Next Generation Credentials which was the internal name for WH4B.
 
-Under the **SSO State** section you will also see the all-important PRT artefact that underpins the core benefits of a Microsoft Entra joined device, being user SSO and a device identity that allows it to pass through any device based access CA policies.
+Under the **SSO State** section you will also see the all-important PRT artefact that underpins the core benefits of a Microsoft Entra joined device, being user SSO and a device identity that allows it to pass through any device based access Conditional Access policies.
 
    ![Text Description automatically generated](img/pswdlesswhfb.018.png)
 
@@ -168,7 +168,7 @@ You can correlate this device information against the **Azure AD** > **Devices**
    ![Graphical user interface, text, application Description automatically generated](img/pswdlesswhfb.020.png)
 
 1. Lastly, we can test the SSO experience on this device now that it is Microsoft Entra joined. 
-1. To do so, simply open Edge and navigate to <https://myapps.microsoft.com> and where you should go straight in without any prompts whatsoever. An interesting observation to note here is that we have a CA policy that requires MFA for all users yet the user received no MFA prompt. Why? If you look at the corresponding entry in the sign-in logs you will see that Microsoft Entra did prompt for MFA but the MFA requirement was satisfied by the existence of an MFA claim in the token. This is because the Primary Refresh Token (PRT) that is used to provide SSO was enriched with an MFA claim as the user is using Windows Hello for Business, which in turn was bootstrapped through a strong credential that satisfies MFA, the Temporary Access Pass.
+1. To do so, simply open Edge and navigate to <https://myapps.microsoft.com> and where you should go straight in without any prompts whatsoever. An interesting observation to note here is that we have a Conditional Access policy that requires MFA for all users yet the user received no MFA prompt. Why? If you look at the corresponding entry in the sign-in logs you will see that Microsoft Entra did prompt for MFA but the MFA requirement was satisfied by the existence of an MFA claim in the token. This is because the Primary Refresh Token (PRT) that is used to provide SSO was enriched with an MFA claim as the user is using Windows Hello for Business, which in turn was bootstrapped through a strong credential that satisfies MFA, the Temporary Access Pass.
 
    ![MISSING ALT TEXT](img/pswdlesswhfb.021.png)
 

@@ -62,7 +62,7 @@ To recap, at this point you now have these two new users that we will begin test
 ***Require MFA for accounts that hold membership to privileged admin directory roles.***    
 ***Require MFA if the sign-in risk is determined to be medium or high.***
 
-Conditional Access policies can become very detailed and cumbersome to manage overtime, so to continue with the ***keeping it simple*** mantra of this lab guide we will be using the new [Conditional Access Templates](https://learn.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-policy-common#conditional-access-templates-preview) feature that provide a convenient way to deploy new CA policies aligned with Microsoft recommendations and naming policies, and which are designed to provide maximum protection for the tenant.
+Conditional Access policies can become very detailed and cumbersome to manage overtime, so to continue with the ***keeping it simple*** mantra of this lab guide we will be using the new [Conditional Access Templates](https://learn.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-policy-common#conditional-access-templates-preview) feature that provide a convenient way to deploy new Conditional Access policies aligned with Microsoft recommendations and naming policies, and which are designed to provide maximum protection for the tenant.
 
 1. Click **Azure Active Directory > Security > Conditional Access**.
 1. In the **Conditional Access – Policies** pane, select **+ New policy from template (Preview).**
@@ -75,7 +75,7 @@ Conditional Access policies can become very detailed and cumbersome to manage ov
 1. Under **Select template** choose the **Require multifactor authentication for risky sign-ins** template, leave the policy name as is, and put the **Policy state** to **On** then click **Next**.
 1. Under **Review + Create** click **Create Policy**.
 
-You should now have these two CA policies in your tenant prefixed with ***CA001*** & ***CA007***.
+You should now have these two Conditional Access policies in your tenant prefixed with ***CA001*** & ***CA007***.
 
    ![Graphical user interface, text, application, chat or text message Description automatically generated](img/pim.002.png)
 

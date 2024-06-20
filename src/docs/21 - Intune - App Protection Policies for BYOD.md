@@ -105,7 +105,7 @@ Use these steps to install Android Studio and the Android Virtual Device (AVD)
 
    ![Graphical user interface, text, application Description automatically generated](img/intappprot.010.png)
 
-1. After stepping through the process and authenticating you should be blocked by the CA policy (that requires an approved client app) with this message.
+1. After stepping through the process and authenticating you should be blocked by the Conditional Access policy (that requires an approved client app) with this message.
 
    ![MISSING ALT TEXT](img/intappprot.011.png)
 

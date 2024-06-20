@@ -9,7 +9,7 @@ In the previous lab we focused on securing our privileged accounts, and we will 
 
 # Lab success exit criteria
 
-At the completion of this lab, you will have created these six additional CA policies using the built-in Conditional Access policy templates that use these naming conventions.
+At the completion of this lab, you will have created these six additional Conditional Access policies using the built-in Conditional Access policy templates that use these naming conventions.
 
 ``CA002: Securing security info registration``   
 ``CA003: Block legacy authentication``  
@@ -25,7 +25,7 @@ These six new policies will complement our two existing policies that we created
 
 ## Step 1. Create a trusted named network location
 
-Before we create the remaining CA policies, we need to first create a trusted network location that users must come from to successfully register their security information (MFA & SSPR) as will be dictated by the CA policy CA002. There are various ways to do this, such as specifying a public IP (or range), or by country. Here will we be using a public IP range derived from your own public IP. To find your current public IP address use <https://myip.com> and write it down.
+Before we create the remaining Conditional Access policies, we need to first create a trusted network location that users must come from to successfully register their security information (MFA & SSPR) as will be dictated by the Conditional Access policy CA002. There are various ways to do this, such as specifying a public IP (or range), or by country. Here will we be using a public IP range derived from your own public IP. To find your current public IP address use <https://myip.com> and write it down.
 
 1. Click **Azure Active Directory > Security > Conditional Access**.
 1. Under **Named locations** select **+ IP ranges location** and in the **New location (IP ranges)** menu on the right provide these details:   
@@ -45,11 +45,11 @@ Before we create the remaining CA policies, we need to first create a trusted ne
 1. Under **Select template** choose the **Securing security info registration** template, leave the policy name as is, and put the **Policy state** to **On** then click **Next**.
 1. Under **Review + Create** click **Create Policy**.
 
-Repeat steps **1-5** to create the other five CA policies using the templates as numbered below.
+Repeat steps **1-5** to create the other five Conditional Access policies using the templates as numbered below.
 
    ![MISSING ALT TEXT](img/securetenant.002.png)
 
-Verify that you now have all 8 CA policies present in your tenant and all are in an **ON** state.
+Verify that you now have all 8 Conditional Access policies present in your tenant and all are in an **ON** state.
 
    ![Graphical user interface, text, application, email Description automatically generated](img/securetenant.003.png)
 
@@ -77,7 +77,7 @@ Once you have chosen your method to change the IP that you are appearing to come
 
 
 ## Step 4. Testing the “CA003: Block legacy authentication” policy
-Using the Microsoft Remote Connectivity Analyzer we will simulate an Exchange ActiveSync client that uses basic authentication in order to verify the CA policy that blocks legacy authentication is working.
+Using the Microsoft Remote Connectivity Analyzer we will simulate an Exchange ActiveSync client that uses basic authentication in order to verify the Conditional Access policy that blocks legacy authentication is working.
 
 1. Navigate to <https://testconnectivity.microsoft.com/tests/o365> and select the “Exchange ActiveSync test.
 

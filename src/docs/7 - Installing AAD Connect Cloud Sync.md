@@ -21,11 +21,11 @@ The basic SKU of Azure Bastion doesn’t allow the copy or pasting of files over
 
 1. Log into the DC VM using Azure Bastion.
 
-2. Go to **Start/Server Manager/Local Server** and toggle **IE Enhanced Security Configuration** to **Off** for both Administrators and Users.
+1. Go to **Start/Server Manager/Local Server** and toggle **IE Enhanced Security Configuration** to **Off** for both Administrators and Users.
 
    ![MISSING ALT TEXT](img/cloudsync.002.png)
 
-3. Open Internet Explorer from the shortcut on the task bar and go to <https://www.microsoft.com/en-us/edge> and then choose the **Download For Windows Server** option and run through the setup to install Edge. Once installed, pin Edge to the task bar.
+1. Open Internet Explorer from the shortcut on the task bar and go to <https://www.microsoft.com/en-us/edge> and then choose the **Download For Windows Server** option and run through the setup to install Edge. Once installed, pin Edge to the task bar.
 
 ## Step 2. Download, install Microsoft Entra Cloud Sync
 
@@ -62,7 +62,7 @@ The basic SKU of Azure Bastion doesn’t allow the copy or pasting of files over
 
    ![MISSING ALT TEXT](img/cloudsync.009.png)
 
-12. Once the installation has finished successfully go back to the AAD portal and under **Azure Active Directory > Azure AD Connect > Manage Cloud Sync >** **Azure AD Connect Cloud Sync** click **Review all agents.** The new agent will be showing as active.
+1. Once the installation has finished successfully go back to the AAD portal and under **Azure Active Directory > Azure AD Connect > Manage Cloud Sync >** **Azure AD Connect Cloud Sync** click **Review all agents.** The new agent will be showing as active.
 
    ![MISSING ALT TEXT](img/cloudsync.010.png)
 
@@ -114,7 +114,7 @@ To validate that Cloud Sync is working we will now create a user in the On-Premi
 
    ![Graphical user interface, text, application, email Description automatically generated](img/cloudsync.018.png)
 
-5. Specify a password and ensure to uncheck the **User must change password at next logon** field and click **Next** to finish creating the user.
+1. Specify a password and ensure to uncheck the **User must change password at next logon** field and click **Next** to finish creating the user.
 
    ![Graphical user interface, text, application, email Description automatically generated](img/cloudsync.019.png)
 

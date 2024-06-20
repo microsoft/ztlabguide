@@ -74,7 +74,7 @@ If you chose the **Cloud Only** option of this lab guide then you can use any us
 **Note:** It can take several hours for updates to the custom banned password list to be applied so if the steps below don’t work initially then try again at a later stage.
 
 1. Open a new InPrivate Edge session and navigate to <https://myaccount.microsoft.com> and log in as Bobby Smith.
-1. You’ll be prompted to register for MFA (due to the CA policies we created previously), so complete the registration and then continue the sign-in. This step will also register the Auth App for SSPR use.
+1. You’ll be prompted to register for MFA (due to the Conditional Access policies we created previously), so complete the registration and then continue the sign-in. This step will also register the Auth App for SSPR use.
 1. In the **My Account** portal click the **Change Password** link in Password tile.
 1. In the **Change Password** page enter in the current password for Bobby and then for the new password try setting it to something that contains the word Unicorn in it to trip the banned password list and then hit **Submit**. You should be prevented from changing the password and be presented with this message.
 

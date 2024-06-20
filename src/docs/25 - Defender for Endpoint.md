@@ -133,7 +133,7 @@ To verify that the device has been properly onboarded to Defender for Endpoint a
 
    ![MISSING ALT TEXT](img/defendpoint.010.png)
 
-1. Any Conditional Access policy with a Grant control that “Require device to be marked as compliant” will now block this device from accessing any resources protected by the CA policy.
+1. Any Conditional Access policy with a Grant control that “Require device to be marked as compliant” will now block this device from accessing any resources protected by the Conditional Access policy.
 1. To bring the device back into compliance you can mark the incident as resolved via the M365 Defender portal. 
 1. To do this go to **Incidents & alerts > Incidents** and select the *“Execution incident on one endpoint”* incident and under **Manage incident** and set the **Status** to **Resolved** and save the changes.
 
