@@ -15,7 +15,7 @@ The Zero Trust Lab Guide aims to provide a level 200 learning path that will hel
 - Provides a choice of doing Hybrid (aka On-Premises AD) or Cloud Only deployment
 - Clearly articulated exit criteria for each phase and step
 - Complexity of the Hybrid Identity option goes no deeper than enabling Password Hash Sync to avoid ADFS
-- No Microsoft Entra – Cloud Sync Only
+- No Microsoft Entra Connect – Cloud Sync Only
 - No public DNS or cert requirements – Everything works with *.onmicrosoft.com (even on-prem scenarios)
 
 ## What does it cover?
