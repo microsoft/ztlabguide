@@ -6,7 +6,7 @@ sidebar_label: Cloud-Only Deployment
 slug: /clouddeploy
 ---
 
-![](img/clouddeploy.001.jpeg)
+![MISSING ALT TEXT](img/clouddeploy.001.jpeg)
 
 **Congratulations** on choosing the simplest lab option in the Zero Trust Lab Guide.        
 
@@ -14,8 +14,8 @@ The Cloud Only option reduces your lab requirements significantly whilst still l
 
 The main scenarios you will not be able to test with a Cloud Only deployment are:
 
-- Synchronisation of users/groups/devices from AD and Azure AD
-- On-premises deployment of Azure AD Password Protection
+- Synchronisation of users/groups/devices from AD and Microsoft Entra ID
+- On-premises deployment of Microsoft Entra Password Protection
 - Password Writeback
 - Application Proxy
 - Your Cloud Only deployment starts with the [Protecting your Global Admins lab](pim).
