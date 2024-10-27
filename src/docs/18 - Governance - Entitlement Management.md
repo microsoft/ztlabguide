@@ -20,7 +20,7 @@ This lab will involve inviting an external user into your tenant for collaborati
    - **Name:** Partner Collaboration
    - **Description:** Team for working with external partners
    - **Team owners:** Leave yourself (Global Admin) which should already be added
-   - **Privacy:** Public
+   - **Privacy:** Private
 1. Click **Apply** to create the team.
 
 ## Step 2. Create the access package.
